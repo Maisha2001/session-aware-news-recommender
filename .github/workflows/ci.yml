@@ -18,6 +18,7 @@ jobs:
       - run: python -m pytest -q
       - run: python scripts/verify_evidence.py
       - run: python scripts/verify_retrieval.py
+      - run: python scripts/verify_session.py
   retrieval:
     strategy:
       matrix:
@@ -41,3 +42,4 @@ jobs:
       - run: python -m pytest -q --disable-warnings
       - run: python scripts/verify_evidence.py
       - run: python scripts/verify_retrieval.py
+      - run: python scripts/verify_session.py

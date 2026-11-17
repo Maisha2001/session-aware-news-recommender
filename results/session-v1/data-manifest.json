@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+  "input_sha256": {
+    "behaviors.tsv": "a424547c8fa17c9ea4879c2110221c2b2f2709f4f7615ede0b0d8e4765158658",
+    "news.tsv": "cd49d7da275e9c405f627d75a0de9d4ec6ad43ff8a8db5d23a447591676e09d6"
+  },
+  "cutoff": "2019-11-13T00:00:00",
+  "index_manifest_sha256": "d44866cc46a9b0f1cc5a1ab69d5cf95408d238b1f1732555b315395fc078ce3d",
+  "counts": {
+    "fit_impressions": 95071,
+    "fit_with_session_context": 5000,
+    "fit_positive_events": 141558,
+    "fit_without_negatives": 0,
+    "development_impressions": 61894,
+    "development_with_session_context": 3511,
+    "development_positive_events": 94786,
+    "development_without_negatives": 0
+  },
+  "configuration": {
+    "gap_seconds": 1800,
+    "feedback_delay_seconds": 300,
+    "length": 10
+  },
+  "source_sha256": "25998ab503f525ab15a9f16f715a0a52f96227a312c646afa68d31e2ca51178e",
+  "session": "Past same-user impression-time groups; clicks available strictly after five minutes; gap >30min resets. Assumed feedback delay, not measured click timing.",
+  "sha256": {
+    "article_ids.npy": "048d83c54accfe6fdbd798f52337bba953e5e01e9894e4e76884bdd96189c9bb",
+    "candidate_ids.npy": "41fe4ef512765d6524c9ded512d98cbb18b907f722d30f52e909159e03dbb6c8",
+    "categories.npy": "7a5388d929363f10b0af1162699be353afd71bb31ec4487060d611f7b919a7ca",
+    "cold_user.npy": "78748bbd90d368e46734f8371c562c3b627e20f9424a2a4810ff73b0c5db9718",
+    "events.npy": "5a05d4611a5a8ee62651a48c1aed1519d8477542e3ae706205c7de818c28ec05",
+    "event_mask.npy": "8ad24a811ab158d185ac0cf71b882156b1127eee39b7f1ffb7af351239a094b1",
+    "first_seen.npy": "683973fe465c236ead0df3f3ef380e641e2f8f49611ae334eda179f20fd5d243",
+    "fit.npy": "2e1575b147d54cb5d7fc937d84383d517747d6f241ab4cda959559f69470bd7b",
+    "fit_clicks.npy": "6149798b2e10a793d67a79f321f7b38aaf3597b757e991f8d4f900051f99ebd8",
+    "fit_exposures.npy": "1ac2fdcdbef9f7060628fec9317dbf841173352dd62bb78d031bbc9077b6a276",
+    "impression_ids.npy": "6771f73ca8369e3e9de10c4688790cc730268bf7ad12a09cd9b5c69b496f0c27",
+    "labels.npy": "830e1dcd778175c9da97c808ddf5769358658ed83c54ca984019cd280b60e0e0",
+    "long.npy": "be12eedd4e10cc6c8c6dee766755c234786e00eed72304c07e409da6e95998ee",
+    "offsets.npy": "4b7bd6292d89d0ffa2aebd2335896bedd0d9fdfb6320b370417fbb78e0ee71ff",
+    "times.npy": "c6700775612e6cbacbcc383f44b29880a2e263ed8204a1846e22f8899d512fb6",
+    "users.npy": "d870bb3153db6cca42cf5b36d488bb2ab1df9cbcf9b243e1bd2ebcc7611680c8",
+    "vectors.npy": "54456da2f2ce7d14fdc1fbafb355b2b32588ccf365d472cfcfb52cc6e70297ab"
+  }
+}

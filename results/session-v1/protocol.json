@@ -1,0 +1,52 @@
+{
+  "frozen_at_utc": "2026-11-17T03:13:21.077664+00:00",
+  "parent_sha": "28d6f3e20f0a0be84f3d8f7001470c5e846020b6",
+  "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+  "frozen_content_index_manifest_sha256": "d44866cc46a9b0f1cc5a1ab69d5cf95408d238b1f1732555b315395fc078ce3d",
+  "frozen_retrieval_report_sha256": "7845b33ba7202345bd3e85d909f6dce218437079d27939f314255e8452d5f949",
+  "source_sha256": {
+    "src/newsrec/session_data.py": "25998ab503f525ab15a9f16f715a0a52f96227a312c646afa68d31e2ca51178e",
+    "src/newsrec/session_model.py": "bb535f84e4a63f1d66169609cef094f93aa72ccd14a1f858356b8cc03e266311",
+    "src/newsrec/train_session.py": "e451b0af823bca5412cdaa71dc7a041763284e00d0cccd8dc25b780bade041bb",
+    "src/newsrec/evaluate_session.py": "1a0f1356aa4b1d6c884af19335753d7717c38abad86b7e0ecac824c7f98a1af8",
+    "src/newsrec/rank_policy.py": "82ed480ed0a53f0ddb379b3eb15f2f7a93db8edf6ee29e23495c2c06e7c4ffb2",
+    "scripts/audit_session.py": "78027b6b888dea853fe8079dd004f3c72da940b3bfa7cb68609f09a9cde30fa6"
+  },
+  "configuration": {
+    "epochs_per_arm": 3,
+    "batch_size": 128,
+    "seed": 20261117,
+    "logged_negatives_per_positive": 8,
+    "gru_units": 32,
+    "hidden_units": [
+      64,
+      16
+    ],
+    "session_gap_seconds": 1800,
+    "feedback_delay_seconds": 300,
+    "session_groups": 10,
+    "long_history": 20,
+    "learning_rate": 0.001,
+    "clipnorm": 1.0
+  },
+  "fitting": "Frozen content vectors; every fit positive with eight own-impression logged nonclicks (replacement if fewer). Impressions lacking nonclicks are counted and excluded only from fitting softmax, never evaluation.",
+  "session_context": "Per-user timestamp groups; mean of previous displayed-and-clicked item vectors. Available only strictly after five minutes; inactivity gap greater than30min resets. Current and equal-time labels never affect current features. No within-impression click order is inferred.",
+  "feedback_assumption": "MIND does not supply click timestamps. Five-minute delivery is a fixed simulation assumption. Earlier development outcomes may update later session features only; all weights are frozen. Long-only trained ablation uses no replayed feedback.",
+  "training": "Two separate identically seeded architectures, long-only zero session feature versus session GRU, fixed final epoch. No tuning/stopping on development outcomes.",
+  "ranking_controls": "Relevance rank scale. Fresh weight.15 and24h first-observation-age half-life. Balanced fresh.10/diversity.15, half max cosine redundancy and half category share. Top10 then remaining relevance order.",
+  "evaluation": "All chronological training-archive development impressions. Four logged arms: long-only, session, session+fresh, session+balanced. Three session catalog policies use union of frozen learned100 and popularity100, no oracle injection. All logged positives remain in catalog denominators, including unavailable/unretrieved ones.",
+  "exposure_bias": "Training negatives restricted to logged nonclicks. Per-training-exposure positive recall bins0/1-99/100-999/1000+, article-macro recall10, cold/empty/session/daily segments. Descriptive sensitivity only; absent propensities/randomization, no unbiased IPS, causal lift or full-catalog AUC claim.",
+  "verification": "Independent raw-TSV audit of all contexts and all scores/segments. Feature tolerance1e-6; ranking metric1e-10, age1e-8, cosine diversity1e-7.128ID-selected policy queries with independent brute-force utility tolerance1e-6.256saved-model reload impressions per arm. Every catalog pool strictly earlier and exact source union.",
+  "final_holdout_opened": false,
+  "official_validation_archive": "Remain sealed until final model/protocol freeze.",
+  "environment": {
+    "TF_USE_LEGACY_KERAS": "1",
+    "TF_NUM_INTRAOP_THREADS": "4",
+    "TF_NUM_INTEROP_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "TF_CPP_MIN_LOG_LEVEL": "2",
+    "TF_ENABLE_ONEDNN_OPTS": "0"
+  },
+  "private_original_protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+  "documentation_clarification": "See protocol-documentation-clarification.json. The original 24h half-life wording is corrected to 24h decay scale; frozen formula/behavior unchanged."
+}

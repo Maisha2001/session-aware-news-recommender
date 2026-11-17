@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "impressions_checked": 156965,
+  "with_session_context": 8511,
+  "maximum_feature_difference": 9.327706201878172e-08,
+  "absolute_tolerance": 1e-06,
+  "data_manifest_sha256": "d70b39ca7e2eeaca0b548bf82b4e4abd85ddbfdb6901c0ae3606a65476f73f3d",
+  "frozen_index_manifest_sha256": "d44866cc46a9b0f1cc5a1ab69d5cf95408d238b1f1732555b315395fc078ce3d",
+  "method": "Independent raw TSV parsing; per-user session partitioning; float64 history and time-group centroids; delayed feedback masks; full candidate/label/first-observation checks; frozen vector equality. No newsrec imports.",
+  "started_at_utc": "2026-11-17T03:15:14.210262+00:00",
+  "completed_at_utc": "2026-11-17T03:15:35.761080+00:00",
+  "wall_seconds": 21.550831800001106,
+  "source_sha256": "78027b6b888dea853fe8079dd004f3c72da940b3bfa7cb68609f09a9cde30fa6",
+  "final_holdout_opened": false
+}

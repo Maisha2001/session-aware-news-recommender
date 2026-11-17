@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "impressions_checked": 61894,
+  "metric_values_checked": 430,
+  "metric_groups_checked": 50,
+  "maximum_aggregate_difference": 2.7940255109548673e-09,
+  "tolerances": {
+    "ranking": 1e-10,
+    "age": 1e-08,
+    "cosine_diversity": 1e-07,
+    "policy_utility": 1e-06
+  },
+  "policy_queries_checked": 128,
+  "policy_decisions_checked": 512,
+  "maximum_policy_utility_difference": 0.0,
+  "prediction_sha256": "b4a375ddde21a21fb9944aba8b79817eef7c37f4642ca37c69b5468720875ea2",
+  "report_sha256": "a1de374eaf07a02bc5d55dc1a83080a0f208fc36a34a27fd76833cad3b6d3eeb",
+  "source_sha256": "78027b6b888dea853fe8079dd004f3c72da940b3bfa7cb68609f09a9cde30fa6",
+  "method": "Independent raw TSV labels and exposure counts, full frozen prediction digest/pool/time checks, rank-sum AUC/positive-rank metrics, float64 slate metrics, article-macro recall, sampled brute-force controls. No newsrec imports.",
+  "started_at_utc": "2026-11-17T03:29:32.065024+00:00",
+  "completed_at_utc": "2026-11-17T03:32:05.862652+00:00",
+  "wall_seconds": 153.79764169999908,
+  "final_holdout_opened": false
+}

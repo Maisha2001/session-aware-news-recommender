@@ -1,0 +1,83 @@
+{
+  "config": {
+    "epochs": 3,
+    "batch_size": 128,
+    "seed": 20261117,
+    "sampled_logged_negatives": 8,
+    "objective": "Sampled within-impression softmax; all fitting positives, eight logged nonclicks each; replacement only when necessary. Logits are uncalibrated.",
+    "fit_examples": 141558,
+    "fitting_impressions_without_negatives": 0,
+    "gru_units": 32,
+    "hidden_units": [
+      64,
+      16
+    ],
+    "learning_rate": 0.001,
+    "clipnorm": 1.0,
+    "content_encoder_frozen": true,
+    "selection": "Fixed final epoch; no development stopping/tuning.",
+    "data_manifest_sha256": "d70b39ca7e2eeaca0b548bf82b4e4abd85ddbfdb6901c0ae3606a65476f73f3d",
+    "started_at_utc": "2026-11-17T03:17:14.910042+00:00",
+    "source_sha256": {
+      "train_session.py": "e451b0af823bca5412cdaa71dc7a041763284e00d0cccd8dc25b780bade041bb",
+      "session_model.py": "bb535f84e4a63f1d66169609cef094f93aa72ccd14a1f858356b8cc03e266311",
+      "session_data.py": "25998ab503f525ab15a9f16f715a0a52f96227a312c646afa68d31e2ca51178e"
+    }
+  },
+  "arms": {
+    "long_only": {
+      "epochs": [
+        {
+          "epoch": 1,
+          "mean_loss": 1.6805460331498214,
+          "wall_seconds": 3.942240899999888,
+          "completed_at_utc": "2026-11-17T03:17:18.998591+00:00"
+        },
+        {
+          "epoch": 2,
+          "mean_loss": 1.5450511232379953,
+          "wall_seconds": 2.2184427000011055,
+          "completed_at_utc": "2026-11-17T03:17:21.323278+00:00"
+        },
+        {
+          "epoch": 3,
+          "mean_loss": 1.5207029090347859,
+          "wall_seconds": 2.2358011000014812,
+          "completed_at_utc": "2026-11-17T03:17:23.647154+00:00"
+        }
+      ],
+      "parameters": 33281,
+      "wall_seconds": 8.678558699999485,
+      "weights_sha256": "7236e6b7fd41f496fbff434e5799dc734f53dfc8519994cd6a292433e91d95c4"
+    },
+    "session": {
+      "epochs": [
+        {
+          "epoch": 1,
+          "mean_loss": 1.6847400575866551,
+          "wall_seconds": 7.790317799999684,
+          "completed_at_utc": "2026-11-17T03:17:31.594560+00:00"
+        },
+        {
+          "epoch": 2,
+          "mean_loss": 1.5480810833273049,
+          "wall_seconds": 5.059323600000425,
+          "completed_at_utc": "2026-11-17T03:17:36.697546+00:00"
+        },
+        {
+          "epoch": 3,
+          "mean_loss": 1.522003733772747,
+          "wall_seconds": 5.0843712000005326,
+          "completed_at_utc": "2026-11-17T03:17:41.815002+00:00"
+        }
+      ],
+      "parameters": 33281,
+      "wall_seconds": 18.045334899999943,
+      "weights_sha256": "5b2ad61fe307237c7de9b6f1077cfecacff530f7d212346b91520b2b8478718d"
+    }
+  },
+  "completed_at_utc": "2026-11-17T03:17:41.853297+00:00",
+  "wall_seconds": 31.160342399998626,
+  "final_holdout_opened": false,
+  "development_scores_used_for_selection": false
+}

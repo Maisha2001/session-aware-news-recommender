@@ -1,0 +1,116 @@
+{
+  "hardware": "AMD Ryzen 7 7800X3D; native Windows CPU; no GPU used.",
+  "training_internal_seconds": 31.160342399998626,
+  "evaluation_internal": {
+    "wall_seconds": 374.64108899999883,
+    "scoring_seconds": 32.19643680000263,
+    "batch_size": 128,
+    "scoring_batch_p95_seconds": 0.07263021999997363
+  },
+  "scope": "Separate offline stages. Sampling covers owned-process RSS, not drivers, filesystem cache or unrelated applications. Scoring batches exclude slate policies and service overhead.",
+  "prepare": {
+    "stage": "prepare",
+    "started_at_utc": "2026-11-17T03:13:31.881593+00:00",
+    "completed_at_utc": "2026-11-17T03:14:11.710591+00:00",
+    "wall_seconds": 39.82900520000112,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 865497088,
+    "samples": 360,
+    "sampling_seconds": 0.1,
+    "scope": "Sampled owned-process RSS; lower bound on peak, excludes filesystem cache, drivers, other applications and separate stages.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+    "sampled_worker_peak_rss_bytes": 861286400
+  },
+  "context-audit": {
+    "stage": "context-audit",
+    "started_at_utc": "2026-11-17T03:15:14.046530+00:00",
+    "completed_at_utc": "2026-11-17T03:15:36.340549+00:00",
+    "wall_seconds": 22.29402830000072,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 1665368064,
+    "samples": 205,
+    "sampling_seconds": 0.1,
+    "scope": "Sampled owned-process RSS; lower bound on peak, excludes filesystem cache, drivers, other applications and separate stages.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+    "sampled_worker_peak_rss_bytes": 1661145088
+  },
+  "train": {
+    "stage": "train",
+    "started_at_utc": "2026-11-17T03:17:07.277156+00:00",
+    "completed_at_utc": "2026-11-17T03:17:42.315170+00:00",
+    "wall_seconds": 35.03801990000102,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 774606848,
+    "samples": 319,
+    "sampling_seconds": 0.1,
+    "scope": "Sampled owned-process RSS; lower bound on peak, excludes filesystem cache, drivers, other applications and separate stages.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+    "sampled_worker_peak_rss_bytes": 770383872
+  },
+  "evaluate": {
+    "stage": "evaluate",
+    "started_at_utc": "2026-11-17T03:18:54.461971+00:00",
+    "completed_at_utc": "2026-11-17T03:25:12.909196+00:00",
+    "wall_seconds": 378.44723460000023,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 623935488,
+    "samples": 3474,
+    "sampling_seconds": 0.1,
+    "scope": "Sampled owned-process RSS; lower bound on peak, excludes filesystem cache, drivers, other applications and separate stages.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+    "sampled_worker_peak_rss_bytes": 619614208
+  },
+  "metric-audit": {
+    "stage": "metric-audit",
+    "started_at_utc": "2026-11-17T03:29:31.915757+00:00",
+    "completed_at_utc": "2026-11-17T03:32:06.413372+00:00",
+    "wall_seconds": 154.49762350000128,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 1399091200,
+    "samples": 1409,
+    "sampling_seconds": 0.1,
+    "scope": "Sampled owned-process RSS; lower bound on peak, excludes filesystem cache, drivers, other applications and separate stages.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "00e3857fea06a1113d60d64528711c81b1e54849d1baeb79042eb0400ec2cd5a",
+    "sampled_worker_peak_rss_bytes": 1394876416
+  }
+}

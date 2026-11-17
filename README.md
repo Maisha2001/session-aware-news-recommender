@@ -4,11 +4,13 @@ Chronological news recommendation research with a licensed data pipeline,
 frozen baselines, learned content retrieval and an exact temporal vector index.
 The learned encoder can represent new articles from titles and categories;
 all model results are measured on a fixed chronological development split.
-Session ranking, the serving application and final holdout evaluation remain
-unfinished. This is a research implementation, not a complete deployed product.
+The serving application and final holdout evaluation remain unfinished. This is
+a research implementation, not a complete deployed product.
 
 See [learned retrieval setup and methods](docs/retrieval.md) for TensorFlow/TFRS,
 FAISS, cold-start definitions, saved-model access and reproducible evaluation.
+The [session-ranking workflow](docs/session-ranking.md) adds delayed-feedback
+sequence modeling and freshness/diversity controls.
 
 ## Run
 
@@ -39,8 +41,8 @@ Tests use authored fixtures, not benchmark data or measured model evidence.
 
 ## Measured baseline
 
-MIND-small training archive: 95,071 fitting impressions (November 9Ã¢â‚¬â€œ12, 2019),
-61,894 chronological development impressions (November 13Ã¢â‚¬â€œ14), and 51,282 articles.
+MIND-small training archive: 95,071 fitting impressions (November 9-12, 2019),
+61,894 chronological development impressions (November 13-14), and 51,282 articles.
 All 2,454,102 development candidate entries and 94,786 positives are retained.
 The official validation archive remains unopened.
 
@@ -107,6 +109,57 @@ python scripts/verify_evidence.py
 python scripts/verify_retrieval.py
 ```
 
-The 49 authored-fixture tests include training, index persistence, time filtering,
+The retrieval tests use authored fixtures to cover training, index persistence,
+time filtering,
 new-article encoding, model reload and the independent metric audit. Lightweight
-baseline environments skip the optional retrieval test module.
+baseline environments skip the optional modeling test modules.
+
+## Measured session ranking
+
+Two fixed three-epoch rankers use the unchanged content encoder: a long-term-only
+comparison and a 32-unit GRU with delayed session feedback. Each has 33,281 ranker
+parameters. All 141,558 fitting positives are used with logged nonclicked negatives.
+Five-minute feedback availability and 30-minute inactivity sessions are simulation
+assumptions because click times are unavailable. Only 3,511 of 61,894 development
+impressions have prior session context; all other impressions remain included.
+
+| Logged ranking | AUC | nDCG@10, all | nDCG@10, with session | Categories@10 | First-seen age hours@10 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Long-term only | 0.6146 | 0.3641 | 0.3553 | 4.98 | 26.94 |
+| Session | 0.6202 | 0.3680 | 0.3582 | 5.00 | 26.27 |
+| Session + fresh | n/a | 0.3666 | 0.3584 | 5.01 | 23.42 |
+| Session + balanced | n/a | 0.3652 | 0.3569 | 5.16 | 24.25 |
+
+AUC is reported for model scores; slate controls rearrange the top ten and are
+evaluated as rankings. These are one-seed offline observations, not a claim of
+statistical significance or causal engagement improvement. Freshness uses first
+observation, not an actual publication timestamp. Session article-macro recall@10
+was 0.3879 versus 0.3917 for long-term only, so the small aggregate improvement
+does not extend to every view of the data. The fresh and balanced presets reduce
+logged nDCG slightly while changing the age and category mix.
+
+| Retrieved union, session ranking | Recall@10 | Recall@100 | Candidate-pool recall | Categories@10 | First-seen age hours@10 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| relevance | 0.99% | 3.39% | 5.61% | 3.16 | 65.39 |
+| fresh | 1.24% | 3.39% | 5.61% | 3.18 | 49.78 |
+| balanced | 1.11% | 3.39% | 5.61% | 3.80 | 53.78 |
+
+The pool combines the frozen learned 100 and popularity 100 without injecting
+clicked items. Its limited coverage remains a bottleneck. Unexposed articles
+have unknown relevance: these catalog figures count known logged positives and
+do not establish full-catalog relevance or live lift. Exposure-frequency strata
+and macro recall across clicked articles are reported as descriptive sensitivity
+checks, with no inverse-propensity or unbiased-causal claim.
+
+Independent checks verified all 156,965 context rows, 430 metric values across
+50 groups, complete prediction/pool digests and 128 sampled policy queries.
+Saved-model reloads matched 256 impressions per arm bitwise. Training took
+31.16 seconds; the complete offline evaluation took 374.64 seconds, including
+slate policies, metrics and private prediction recording. See
+[methods, evidence and limitations](docs/session-ranking.md).
+
+The 55 authored-fixture tests cover the complete workflow. Lightweight environments
+run 40 baseline tests and skip the two optional modeling modules. Run
+`python scripts/verify_session.py` to verify the published session evidence.
+The official validation archive remains unopened. Service integration and the
+usable browsing demo remain unfinished.

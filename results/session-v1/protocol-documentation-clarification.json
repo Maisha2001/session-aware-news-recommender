@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-11-17T03:18:38.769494+00:00",
+  "path": "src/newsrec/evaluate_session.py",
+  "original_sha256": "1a0f1356aa4b1d6c884af19335753d7717c38abad86b7e0ecac824c7f98a1af8",
+  "corrected_sha256": "df5da9b83c3fb6d25f86d12a88943330f4f99331085375e03a8a9f7a013513b7",
+  "old_text": "First-observation age proxy; article publication/edit timestamps unavailable. Fixed24h half-life.",
+  "corrected_text": "First-observation age proxy; publication/edit timestamps unavailable. Fixed exp(-age_hours/24) decay: 24-hour scale, approximately16.64-hour half-life.",
+  "reason": "The frozen mathematical implementation exp(-age_hours/24) uses a24-hour decay scale, not a24-hour half-life. Documentation corrected before any real ranking evaluation; all functions, parameters, training and prediction behavior unchanged. Original protocol remains intact.",
+  "real_ranking_evaluation_started": false
+}

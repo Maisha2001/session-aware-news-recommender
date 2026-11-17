@@ -113,5 +113,6 @@ content-version history. Other clicked items can still be false in-batch negativ
 observed-exposure and popularity biases remain. One seed and one configuration
 do not establish statistical significance or cross-platform bitwise retraining.
 Timing covers offline batches and local files, not recommendation-service latency.
-Offline improvement does not establish live engagement lift. Session ranking,
-freshness/diversity controls, serving and a browsing demo remain future work.
+Offline improvement does not establish live engagement lift. Session ranking
+and freshness/diversity experiments are documented in
+[session ranking](session-ranking.md). Serving and a browsing demo remain unfinished.
