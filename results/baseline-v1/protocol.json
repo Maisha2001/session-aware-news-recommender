@@ -1,0 +1,41 @@
+{
+  "frozen_at_utc": "2026-11-17T01:00:21.386649+00:00",
+  "cutoff": "2019-11-13T00:00:00",
+  "selection": "Cutoff proposed before data access; retained after training-only timestamp coverage inspection, before any scores.",
+  "training_date_counts": {
+    "2019-11-09": 13570,
+    "2019-11-10": 15048,
+    "2019-11-11": 32799,
+    "2019-11-12": 33654,
+    "2019-11-13": 31624,
+    "2019-11-14": 30270
+  },
+  "expected_partition_counts": {
+    "fit": 95071,
+    "development": 61894
+  },
+  "fit": "Labeled training-archive impressions strictly before cutoff. Histories are not counted as popularity clicks.",
+  "development": "Remaining training-archive impressions; frozen fit counts, no development label updates.",
+  "ranking": "All logged candidates, popularity and fixed SHA256 hash-order comparator; macro AUC, mean_clicked_rr, first_hit_rr, nDCG@5/10, recall@5/10.",
+  "retrieval": "Frozen popularity top20/100 among IDs first observed strictly earlier; same-time/future excluded; unavailable positives retained in denominator.",
+  "segments": "All, fit-unseen user, fit-seen user, and impressions with a positive absent from all fitting candidates; daily ranking.",
+  "exclusions": "No malformed row silently excluded. Zero-positive ranking ratios and single-class AUC undefined and denominator-reported.",
+  "holdout": "MINDsmall_dev.zip remains sealed until final project protocol/models frozen.",
+  "training_inputs": {
+    "news.tsv": {
+      "sha256": "cd49d7da275e9c405f627d75a0de9d4ec6ad43ff8a8db5d23a447591676e09d6",
+      "bytes": 41202121
+    },
+    "behaviors.tsv": {
+      "sha256": "a424547c8fa17c9ea4879c2110221c2b2f2709f4f7615ede0b0d8e4765158658",
+      "bytes": 92019716
+    }
+  },
+  "source_sha256": {
+    "src/newsrec/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "src/newsrec/baseline.py": "dcde42dfaff9b3363d8ad32078a29bfb9b1206d961575a7bca61b0baaef2e268",
+    "src/newsrec/cli.py": "e347b355fa7cbbb491625d202dec77910c267e7bf13e736032eeba88d309ee8d",
+    "src/newsrec/data.py": "10aa3728c9be4372adba78ca71282823c37c2d4875faaaafe244d2f6d8464e9a",
+    "src/newsrec/metrics.py": "6ff6d91598809f3fcd72f6e48fe73e84f3bb6d12eaa2ddaf5c5081d1463796de"
+  }
+}

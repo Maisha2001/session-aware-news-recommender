@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-11-17T01:04:03.095062+00:00",
+  "completed_at_utc": "2026-11-17T01:04:14.913737+00:00",
+  "development_impressions": 61894,
+  "metric_values_checked": 96,
+  "metric_groups_checked": 16,
+  "maximum_absolute_difference": 5.589972928987663e-14,
+  "absolute_tolerance": 1e-10,
+  "prediction_order_sha256": "2c3ad3ca85dec56532c7963ab9da8aa7b719762d7116359761d0ee377fe157e5",
+  "report_sha256": "638f1b608de006ce066703fe551a642eb04a9af76bbcbd8c0eaca0a036331ae4",
+  "source_sha256": "192303fdede73f2115f39b7deb40150bab7b3c34a482f10c30255fa7c10364c1",
+  "wall_seconds": 11.81899710000016,
+  "method": "Independent TSV parsing, rank-sum AUC, positive-rank metrics, accurate sums, and chronological active top100 catalog; no newsrec imports.",
+  "final_archive_opened": false
+}

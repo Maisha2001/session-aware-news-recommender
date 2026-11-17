@@ -1,0 +1,496 @@
+{
+  "format_version": 1,
+  "dataset": {
+    "articles": 51282,
+    "candidates": 5843444,
+    "catalog_policy": "Only IDs observed strictly before each query time are retrievable; same-time observations excluded.",
+    "cutoff": "2019-11-13T00:00:00",
+    "dataset": "MIND-format files; archive origin requires input-hash verification",
+    "date_range": [
+      "2019-11-09T00:00:19",
+      "2019-11-14T23:59:13"
+    ],
+    "format_version": 1,
+    "history_policy": "Provided pre-impression history is preserved, not appended to popularity counts.",
+    "holdout_provenance": "Not inferred from filenames; verify input hashes against the training archive.",
+    "input_sha256": {
+      "behaviors.tsv": "a424547c8fa17c9ea4879c2110221c2b2f2709f4f7615ede0b0d8e4765158658",
+      "news.tsv": "cd49d7da275e9c405f627d75a0de9d4ec6ad43ff8a8db5d23a447591676e09d6"
+    },
+    "observed_ids_without_metadata": 0,
+    "partition_counts": {
+      "development": 61894,
+      "fit": 95071
+    },
+    "timezone": "unspecified by dataset; naive timestamps retained"
+  },
+  "evaluation_split": "development",
+  "holdout_access": "Evaluator reads only its input database; original archive identity is recorded by input hashes.",
+  "counts": {
+    "impressions": 61894,
+    "candidates": 2454102,
+    "positives": 94786,
+    "zero_positive_impressions": 0,
+    "empty_history_impressions": 1503,
+    "cold_user_impressions": 15172,
+    "cold_positive_article_impressions": 37961,
+    "unavailable_positive_events": 313
+  },
+  "impression_ranking": {
+    "popularity": {
+      "all": {
+        "auc": {
+          "mean": 0.5015409050293509,
+          "impressions": 61894
+        },
+        "first_hit_rr": {
+          "mean": 0.2491665687975395,
+          "impressions": 61894
+        },
+        "mean_clicked_rr": {
+          "mean": 0.22254506451045356,
+          "impressions": 61894
+        },
+        "ndcg@10": {
+          "mean": 0.2806239597529139,
+          "impressions": 61894
+        },
+        "ndcg@5": {
+          "mean": 0.22471175360999576,
+          "impressions": 61894
+        },
+        "recall@10": {
+          "mean": 0.4932347278091426,
+          "impressions": 61894
+        },
+        "recall@5": {
+          "mean": 0.32967485620802994,
+          "impressions": 61894
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.5115857567660307,
+          "impressions": 15172
+        },
+        "first_hit_rr": {
+          "mean": 0.2614398523555119,
+          "impressions": 15172
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2372055124534734,
+          "impressions": 15172
+        },
+        "ndcg@10": {
+          "mean": 0.2972233766176415,
+          "impressions": 15172
+        },
+        "ndcg@5": {
+          "mean": 0.24222849830502466,
+          "impressions": 15172
+        },
+        "recall@10": {
+          "mean": 0.5172434516884805,
+          "impressions": 15172
+        },
+        "recall@5": {
+          "mean": 0.35525594469537214,
+          "impressions": 15172
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.498279047862487,
+          "impressions": 46722
+        },
+        "first_hit_rr": {
+          "mean": 0.24518107463753883,
+          "impressions": 46722
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2177843882510307,
+          "impressions": 46722
+        },
+        "ndcg@10": {
+          "mean": 0.27523364357057595,
+          "impressions": 46722
+        },
+        "ndcg@5": {
+          "mean": 0.219023554249663,
+          "impressions": 46722
+        },
+        "recall@10": {
+          "mean": 0.4854383929198584,
+          "impressions": 46722
+        },
+        "recall@5": {
+          "mean": 0.32136792853948226,
+          "impressions": 46722
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.45134909518188654,
+          "impressions": 37961
+        },
+        "first_hit_rr": {
+          "mean": 0.21218936080929568,
+          "impressions": 37961
+        },
+        "mean_clicked_rr": {
+          "mean": 0.1843782941439331,
+          "impressions": 37961
+        },
+        "ndcg@10": {
+          "mean": 0.23861582341431198,
+          "impressions": 37961
+        },
+        "ndcg@5": {
+          "mean": 0.1819583406012908,
+          "impressions": 37961
+        },
+        "recall@10": {
+          "mean": 0.44206534575537815,
+          "impressions": 37961
+        },
+        "recall@5": {
+          "mean": 0.27796121546772956,
+          "impressions": 37961
+        }
+      }
+    },
+    "hash_order": {
+      "all": {
+        "auc": {
+          "mean": 0.5077820157536571,
+          "impressions": 61894
+        },
+        "first_hit_rr": {
+          "mean": 0.25460143175816524,
+          "impressions": 61894
+        },
+        "mean_clicked_rr": {
+          "mean": 0.22589327789071026,
+          "impressions": 61894
+        },
+        "ndcg@10": {
+          "mean": 0.28285190858339027,
+          "impressions": 61894
+        },
+        "ndcg@5": {
+          "mean": 0.22860752199938322,
+          "impressions": 61894
+        },
+        "recall@10": {
+          "mean": 0.48970699677409785,
+          "impressions": 61894
+        },
+        "recall@5": {
+          "mean": 0.3313516323337855,
+          "impressions": 61894
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.5173624489105859,
+          "impressions": 15172
+        },
+        "first_hit_rr": {
+          "mean": 0.2656739105552637,
+          "impressions": 15172
+        },
+        "mean_clicked_rr": {
+          "mean": 0.24086526906444086,
+          "impressions": 15172
+        },
+        "ndcg@10": {
+          "mean": 0.29649699921347844,
+          "impressions": 15172
+        },
+        "ndcg@5": {
+          "mean": 0.2445460399592116,
+          "impressions": 15172
+        },
+        "recall@10": {
+          "mean": 0.5035321752316858,
+          "impressions": 15172
+        },
+        "recall@5": {
+          "mean": 0.35050782605653363,
+          "impressions": 15172
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.5046709688837273,
+          "impressions": 46722
+        },
+        "first_hit_rr": {
+          "mean": 0.2510058740270871,
+          "impressions": 46722
+        },
+        "mean_clicked_rr": {
+          "mean": 0.22103143443176443,
+          "impressions": 46722
+        },
+        "ndcg@10": {
+          "mean": 0.2784209485423147,
+          "impressions": 46722
+        },
+        "ndcg@5": {
+          "mean": 0.2234318190224769,
+          "impressions": 46722
+        },
+        "recall@10": {
+          "mean": 0.4852175569479268,
+          "impressions": 46722
+        },
+        "recall@5": {
+          "mean": 0.32513105592093017,
+          "impressions": 46722
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.499447354779773,
+          "impressions": 37961
+        },
+        "first_hit_rr": {
+          "mean": 0.25159018109533704,
+          "impressions": 37961
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21716209341156262,
+          "impressions": 37961
+        },
+        "ndcg@10": {
+          "mean": 0.2792352698101162,
+          "impressions": 37961
+        },
+        "ndcg@5": {
+          "mean": 0.22356929876825976,
+          "impressions": 37961
+        },
+        "recall@10": {
+          "mean": 0.4908007699205238,
+          "impressions": 37961
+        },
+        "recall@5": {
+          "mean": 0.33015316958949786,
+          "impressions": 37961
+        }
+      }
+    }
+  },
+  "catalog_retrieval": {
+    "all": {
+      "available_positive_fraction": {
+        "mean": 0.9970947265548112,
+        "impressions": 61894
+      },
+      "recall@100": {
+        "mean": 0.035819652709365754,
+        "impressions": 61894
+      },
+      "recall@20": {
+        "mean": 0.002395396085545182,
+        "impressions": 61894
+      }
+    },
+    "cold_user": {
+      "available_positive_fraction": {
+        "mean": 0.9971189396990213,
+        "impressions": 15172
+      },
+      "recall@100": {
+        "mean": 0.03220536786645403,
+        "impressions": 15172
+      },
+      "recall@20": {
+        "mean": 0.002836888336492872,
+        "impressions": 15172
+      }
+    },
+    "warm_user": {
+      "available_positive_fraction": {
+        "mean": 0.9970868638386615,
+        "impressions": 46722
+      },
+      "recall@100": {
+        "mean": 0.03699331671425976,
+        "impressions": 46722
+      },
+      "recall@20": {
+        "mean": 0.0022520306381889417,
+        "impressions": 46722
+      }
+    },
+    "cold_positive_article": {
+      "available_positive_fraction": {
+        "mean": 0.9952630595975738,
+        "impressions": 37961
+      },
+      "recall@100": {
+        "mean": 0.004782079826204059,
+        "impressions": 37961
+      },
+      "recall@20": {
+        "mean": 0.00012686465295722165,
+        "impressions": 37961
+      }
+    }
+  },
+  "daily_ranking": {
+    "2019-11-13": {
+      "popularity": {
+        "auc": {
+          "mean": 0.5091876163780522,
+          "impressions": 31624
+        },
+        "first_hit_rr": {
+          "mean": 0.2641513231270926,
+          "impressions": 31624
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23474938762698946,
+          "impressions": 31624
+        },
+        "ndcg@10": {
+          "mean": 0.2972340829629151,
+          "impressions": 31624
+        },
+        "ndcg@5": {
+          "mean": 0.24118803434649624,
+          "impressions": 31624
+        },
+        "recall@10": {
+          "mean": 0.5167836602971936,
+          "impressions": 31624
+        },
+        "recall@5": {
+          "mean": 0.3527407295774489,
+          "impressions": 31624
+        }
+      },
+      "hash_order": {
+        "auc": {
+          "mean": 0.5194167038543865,
+          "impressions": 31624
+        },
+        "first_hit_rr": {
+          "mean": 0.26638054197797095,
+          "impressions": 31624
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23755060090285776,
+          "impressions": 31624
+        },
+        "ndcg@10": {
+          "mean": 0.29608782231680486,
+          "impressions": 31624
+        },
+        "ndcg@5": {
+          "mean": 0.24343779233914847,
+          "impressions": 31624
+        },
+        "recall@10": {
+          "mean": 0.5050452824594791,
+          "impressions": 31624
+        },
+        "recall@5": {
+          "mean": 0.35182925601585247,
+          "impressions": 31624
+        }
+      }
+    },
+    "2019-11-14": {
+      "popularity": {
+        "auc": {
+          "mean": 0.4935521504970326,
+          "impressions": 30270
+        },
+        "first_hit_rr": {
+          "mean": 0.23351153507037295,
+          "impressions": 30270
+        },
+        "mean_clicked_rr": {
+          "mean": 0.20979483278797792,
+          "impressions": 30270
+        },
+        "ndcg@10": {
+          "mean": 0.26327085316578,
+          "impressions": 30270
+        },
+        "ndcg@5": {
+          "mean": 0.20749847637141555,
+          "impressions": 30270
+        },
+        "recall@10": {
+          "mean": 0.4686324337555685,
+          "impressions": 30270
+        },
+        "recall@5": {
+          "mean": 0.3055772288728933,
+          "impressions": 30270
+        }
+      },
+      "hash_order": {
+        "auc": {
+          "mean": 0.4956268992522602,
+          "impressions": 30270
+        },
+        "first_hit_rr": {
+          "mean": 0.24229543302692078,
+          "impressions": 30270
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21371451400111197,
+          "impressions": 30270
+        },
+        "ndcg@10": {
+          "mean": 0.2690239424154078,
+          "impressions": 30270
+        },
+        "ndcg@5": {
+          "mean": 0.2131138824478319,
+          "impressions": 30270
+        },
+        "recall@10": {
+          "mean": 0.4736826179662317,
+          "impressions": 30270
+        },
+        "recall@5": {
+          "mean": 0.30995802905259034,
+          "impressions": 30270
+        }
+      }
+    }
+  },
+  "prediction_order_sha256": "2c3ad3ca85dec56532c7963ab9da8aa7b719762d7116359761d0ee377fe157e5",
+  "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+  "protocol": {
+    "fit": "Only labeled candidates in impressions strictly before cutoff; no history-derived clicks.",
+    "development": "Frozen fit counts, no development label updates. Labels used for metrics only.",
+    "catalog": "All IDs observed in earlier impressions/histories; strictly earlier time, independent of clicks. New zero-score items retain fixed hash tie order.",
+    "cold_user": "User absent from fitting impressions.",
+    "cold_positive_article": "At least one positive article absent from all fitting candidates, not merely zero-click.",
+    "ranking": "All logged candidates, no negative resampling; ties broken by SHA256(article ID) with fixed namespace.",
+    "averaging": "Macro per impression; zero-positive impressions excluded from recall/nDCG/RR, one-class impressions excluded from AUC; counts accompany every mean.",
+    "mrr": "mean_clicked_rr averages reciprocal ranks over all clicked candidates; first_hit_rr is reported separately."
+  },
+  "limitations": [
+    "Logged exposure and active-user sampling bias; no propensity correction or causal engagement claim.",
+    "MIND timestamps have no documented timezone; dates are retained in dataset time.",
+    "No publication timestamps or text version histories: strict prior observation is a conservative availability proxy, not publication time.",
+    "The catalog is the sampled dataset's observed catalog, not the full live publisher catalog.",
+    "History contains ordered earlier clicks without per-click timestamps; session IDs and boundaries are not supplied.",
+    "Offline research only; popularity is a baseline, not the completed learned recommendation system."
+  ],
+  "runtime": {
+    "started_at_utc": "2026-11-17T01:02:54.207168+00:00",
+    "completed_at_utc": "2026-11-17T01:03:19.331973+00:00",
+    "wall_seconds": 25.124802700000146,
+    "python": "3.13.13",
+    "platform": "Windows-11-10.0.26300-SP0"
+  }
+}

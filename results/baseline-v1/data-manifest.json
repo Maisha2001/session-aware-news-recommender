@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-11-17T01:00:21.386095+00:00",
+  "source": "Manually obtained archives; sizes and SHA256 match metadata from the official homepage-linked mirror at the recorded revision.",
+  "mirror": "https://huggingface.co/datasets/yjw1029/MIND",
+  "revision": "0f871bdfd1ac4029324a48722ec6d52d714ebf27",
+  "archives": {
+    "train": {
+      "sha256": "a966e5138ad103376e9817e02395719bf1c62ec56e6e98c30d46fbb991a7fafa",
+      "bytes": 52953372,
+      "archive": "MINDsmall_train.zip",
+      "content_opened": true
+    },
+    "dev": {
+      "sha256": "b315cde1c9b9d45008b5a7c4b2e1f87647659f09f74892ae3899c0005d5d6155",
+      "bytes": 30946172,
+      "archive": "MINDsmall_dev.zip",
+      "content_opened": false
+    }
+  },
+  "training_inputs": {
+    "news.tsv": {
+      "sha256": "cd49d7da275e9c405f627d75a0de9d4ec6ad43ff8a8db5d23a447591676e09d6",
+      "bytes": 41202121
+    },
+    "behaviors.tsv": {
+      "sha256": "a424547c8fa17c9ea4879c2110221c2b2f2709f4f7615ede0b0d8e4765158658",
+      "bytes": 92019716
+    }
+  },
+  "final_holdout_content_opened": false,
+  "license": "Microsoft Research License Terms; noncommercial research, no dataset redistribution"
+}

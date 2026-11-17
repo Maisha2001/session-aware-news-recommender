@@ -1,0 +1,16 @@
+{
+  "stage": "evaluate",
+  "started_at_utc": "2026-11-17T01:02:54.120455+00:00",
+  "completed_at_utc": "2026-11-17T01:03:19.437457+00:00",
+  "wall_seconds": 25.317009999999755,
+  "peak_process_tree_rss_bytes": 61644800,
+  "process_peak_working_set_bytes": {
+    "6048": 4218880,
+    "10848": 57425920
+  },
+  "measurement": "CLI launcher and all child workers sampled every100ms; per-process Windows peak working set also retained. Excludes other applications.",
+  "returncode": 0,
+  "ingestion_wall_seconds": 66.62579740000001,
+  "ingestion_memory": "Unavailable: initial monitor measured only the Windows venv launcher. That 4MB reading is not an ingestion-worker memory estimate. Ingestion was not rerun.",
+  "compute": "CPU only; standard-library pipeline; no GPU or external service."
+}
