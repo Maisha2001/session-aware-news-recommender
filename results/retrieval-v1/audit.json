@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "development_impressions_per_arm": 61894,
+  "arms": 2,
+  "metric_values_checked": 176,
+  "metric_groups_checked": 32,
+  "maximum_absolute_difference": 6.600275881396556e-14,
+  "absolute_tolerance": 1e-10,
+  "prediction_order_sha256": {
+    "initial_content": "87eb142c3fffd6bf7d273ca497883592e101194ecaa32dd26724e9b07c500ca2",
+    "learned_content": "9e3d359cf45e24f58fc7f994237111fd2a89a5bfb8d7ed0b7364b43a7dd971b0"
+  },
+  "report_sha256": "7845b33ba7202345bd3e85d909f6dce218437079d27939f314255e8452d5f949",
+  "source_sha256": "9d07602e5a1461a69a1d2f951855d23bacfdaf833a366744892482b80c147a52",
+  "independent_metric_source_sha256": "192303fdede73f2115f39b7deb40150bab7b3c34a482f10c30255fa7c10364c1",
+  "method": "Raw TSV labels, history and chronology; frozen label-free predictions; independent rank-sum AUC, positive-rank metrics, accurate sums, all segment/daily groups, every availability/cardinality check. No newsrec imports.",
+  "started_at_utc": "2026-11-17T02:20:18.154642+00:00",
+  "completed_at_utc": "2026-11-17T02:20:40.582798+00:00",
+  "wall_seconds": 22.428153800000473,
+  "final_archive_opened": false
+}

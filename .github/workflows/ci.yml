@@ -17,3 +17,27 @@ jobs:
       - run: python -m pip install -e . -r requirements/test.txt
       - run: python -m pytest -q
       - run: python scripts/verify_evidence.py
+      - run: python scripts/verify_retrieval.py
+  retrieval:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      TF_USE_LEGACY_KERAS: '1'
+      TF_NUM_INTRAOP_THREADS: '2'
+      TF_NUM_INTEROP_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      TF_ENABLE_ONEDNN_OPTS: '0'
+      TF_CPP_MIN_LOG_LEVEL: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements/retrieval.txt
+      - run: python -m pip install -e . -r requirements/test.txt -r requirements/retrieval.txt
+      - run: python -m pytest -q --disable-warnings
+      - run: python scripts/verify_evidence.py
+      - run: python scripts/verify_retrieval.py

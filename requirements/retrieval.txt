@@ -1,0 +1,6 @@
+-c retrieval-recorded.txt
+tensorflow==2.20.0
+tf-keras==2.20.1
+tensorflow-recommenders==0.7.7
+faiss-cpu==1.12.0
+numpy==2.2.6

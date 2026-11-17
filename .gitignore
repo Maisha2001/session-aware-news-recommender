@@ -10,3 +10,9 @@ runs/
 *.zip
 *.env
 .coverage
+*.weights.h5
+*.checkpoint*
+*.faiss
+*.npy
+*.npz
+*.jsonl.gz

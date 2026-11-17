@@ -1,0 +1,75 @@
+{
+  "config": {
+    "epochs": 3,
+    "batch_size": 256,
+    "seed": 20261116,
+    "dimension": 64,
+    "buckets": 32768,
+    "token_length": 32,
+    "history_length": 20,
+    "temperature": 0.1,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "clipnorm": 1.0,
+    "data": {
+      "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+      "input_sha256": {
+        "behaviors.tsv": "a424547c8fa17c9ea4879c2110221c2b2f2709f4f7615ede0b0d8e4765158658",
+        "news.tsv": "cd49d7da275e9c405f627d75a0de9d4ec6ad43ff8a8db5d23a447591676e09d6"
+      },
+      "cutoff": "2019-11-13T00:00:00",
+      "token_buckets": 32768,
+      "token_length": 32,
+      "history_length": 20,
+      "articles": 51282,
+      "fit_positive_examples": 141558,
+      "fit_users": 40148,
+      "fit_candidate_articles": 13536,
+      "fit_content_articles": 36391,
+      "text": "Category, subcategory and title only; fixed SHA256 token hashing, no corpus vocabulary adaptation.",
+      "fit": "All positive targets from fitting impressions; only their pre-impression last20 history items enter the query encoder.",
+      "content_sha256": "97c0a7d006e6c7061dd8dbacc0e76ce9926747851e2d3af0c0dedc8aed2fde26"
+    },
+    "started_at_utc": "2026-11-17T02:15:47.396556+00:00",
+    "selection": "Fixed configuration and final epoch; no development score or final labels used for fitting/stopping.",
+    "source_sha256": {
+      "train_retrieval.py": "2b5dc241ea3c6250cae80d859d8e2f2424ad6b58b045e44b2eb8c29bc5af2889",
+      "retrieval_model.py": "032d67e08af4313e841df8469a4dc14ab1f066f8b1d5e83f37cb4b7cb25e6e2d",
+      "retrieval_data.py": "fbea4a01318eed206ade7a4099801871758005d9195b50989bfab9ba4d0d296b"
+    }
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "mean_loss": 5.244564117204523,
+      "examples": 141558,
+      "wall_seconds": 19.000809400000435,
+      "completed_at_utc": "2026-11-17T02:16:06.533761+00:00"
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 4.963556392829587,
+      "examples": 141558,
+      "wall_seconds": 17.913953900000706,
+      "completed_at_utc": "2026-11-17T02:16:24.501790+00:00"
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 4.770114031786446,
+      "examples": 141558,
+      "wall_seconds": 17.808943899999576,
+      "completed_at_utc": "2026-11-17T02:16:42.356356+00:00"
+    }
+  ],
+  "parameters": 2105408,
+  "wall_seconds": 60.435735200000636,
+  "completed_at_utc": "2026-11-17T02:16:42.404344+00:00",
+  "weights_sha256": {
+    "epoch-1.weights.h5": "52bd42819462d1dbf043bd93ee6f03a32d801b4ef35e5ff88059a19432df9207",
+    "epoch-2.weights.h5": "8d7517d9cab6f12609fc621054d663e8cdb5c86868bb42942af3d6efb280b98c",
+    "epoch-3.weights.h5": "dd821f62657c351aee7025200add88015bcaca4379f1bcaa83fc6df39ca71a90",
+    "initial.weights.h5": "94df623a05a7bbb1b6f5abfedd8c67eab6fb52604db02200e3771eea914f9479"
+  },
+  "final_holdout_opened": false,
+  "development_scores_used_for_selection": false
+}

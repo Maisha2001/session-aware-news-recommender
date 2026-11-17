@@ -1,12 +1,14 @@
 # Session-Aware News Recommendation
 
-A reproducible foundation for chronological news recommendation research.
-The current code builds a local interaction database and compares a frozen
-popularity baseline with deterministic hash ordering. It evaluates both logged
-candidate ranking and retrieval from the previously observed article catalog.
+Chronological news recommendation research with a licensed data pipeline,
+frozen baselines, learned content retrieval and an exact temporal vector index.
+The learned encoder can represent new articles from titles and categories;
+all model results are measured on a fixed chronological development split.
+Session ranking, the serving application and final holdout evaluation remain
+unfinished. This is a research implementation, not a complete deployed product.
 
-This is an initial foundation. Learned retrieval, session-aware ranking and the
-browsing application are not yet implemented.
+See [learned retrieval setup and methods](docs/retrieval.md) for TensorFlow/TFRS,
+FAISS, cold-start definitions, saved-model access and reproducible evaluation.
 
 ## Run
 
@@ -37,8 +39,8 @@ Tests use authored fixtures, not benchmark data or measured model evidence.
 
 ## Measured baseline
 
-MIND-small training archive: 95,071 fitting impressions (November 9â€“12, 2019),
-61,894 chronological development impressions (November 13â€“14), and 51,282 articles.
+MIND-small training archive: 95,071 fitting impressions (November 9Ã¢â‚¬â€œ12, 2019),
+61,894 chronological development impressions (November 13Ã¢â‚¬â€œ14), and 51,282 articles.
 All 2,454,102 development candidate entries and 94,786 positives are retained.
 The official validation archive remains unopened.
 
@@ -58,9 +60,53 @@ The evaluator took 25.12 seconds on CPU, with a measured 57.43 MB peak worker
 working set (61.64 MB for launcher and worker together). An independent TSV audit
 matched all 96 metric values across 16 groups and the complete ranked prediction
 digest. See [full results and evidence](results/baseline-v1/report.json) and
-[evaluation details](docs/evaluation.md). The 40 tests use authored fixtures.
+[evaluation details](docs/evaluation.md). The baseline tests use authored fixtures.
 
 ```sh
 python scripts/verify_evidence.py
 python scripts/audit_baseline.py --news /private/mind/train/news.tsv --behaviors /private/mind/train/behaviors.tsv --database /private/news.sqlite --report /private/baseline-report.json --output /private/audit.json
 ```
+
+## Measured learned retrieval
+
+The fixed three-epoch content model was trained on all 141,558 fitting clicks
+with 2,105,408 parameters. Both content arms use the same 61,894 development
+impressions and retain all 94,786 positives. No final holdout data was opened.
+
+| Model | Logged AUC | Logged nDCG@10 | Catalog recall@20 | Catalog recall@100 |
+| --- | ---: | ---: | ---: | ---: |
+| Frozen popularity | 0.5015 | 0.2806 | 0.24% | 3.58% |
+| Initial content weights | 0.5558 | 0.3108 | 0.39% | 0.95% |
+| Learned content | 0.6141 | 0.3602 | 0.74% | 2.25% |
+
+Learning improves the content model's observed ranking and retrieval metrics,
+but **catalog recall@100 remains below popularity**. The model retrieves only a
+small fraction of clicked items from the full observed catalog. Empty-history
+recall@100 is 0.067%; the stricter unseen-content-positive segment reaches 1.74%.
+These weaknesses remain visible; no checkpoint was selected or retuned using
+these outcomes. There is no claim of statistical significance or live engagement lift.
+
+The exact FAISS index contains 51,282 article vectors. All returned articles
+pass strict time-availability checks. An independent raw-TSV audit reproduced
+every published segment and daily metric and both complete prediction digests.
+Exhaustive float64 checks passed the frozen tolerances on 128 queries per arm;
+the initial arm had one ordering difference within floating-point tolerance.
+Saved-weight reloads were bitwise equal on the measured CPU.
+
+Training took 60.44 seconds on CPU. The complete two-arm evaluation took
+164.59 seconds internally, including prediction recording and audits; the
+external worker peak was 453.10 MB. Training memory samples were lost in a
+monitor-exit race, so no training memory figure is claimed. The index is
+13.13 MB per arm, and learned-arm catalog-search batch p95 was 39.34 ms for
+128 queries; this is not service latency. See the [full evidence](docs/retrieval.md).
+
+```sh
+python -m pip install -e . -r requirements/test.txt -r requirements/retrieval.txt
+python -m pytest -q
+python scripts/verify_evidence.py
+python scripts/verify_retrieval.py
+```
+
+The 49 authored-fixture tests include training, index persistence, time filtering,
+new-article encoding, model reload and the independent metric audit. Lightweight
+baseline environments skip the optional retrieval test module.

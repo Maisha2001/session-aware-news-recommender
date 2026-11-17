@@ -1,0 +1,55 @@
+{
+  "training": {
+    "wall_seconds": 60.435735200000636,
+    "epochs": 3,
+    "parameters": 2105408,
+    "peak_memory_bytes": null,
+    "memory_measurement_valid": false,
+    "diagnostic": "Training completed and all checkpoints were saved. The external monitor encountered a process-exit race before persisting its memory samples. No training peak-memory claim; training was not repeated."
+  },
+  "hardware": "AMD Ryzen7 7800X3D; native Windows CPU; no GPU used.",
+  "model_index_bytes_per_arm": 13128237,
+  "scope": "Offline complete development run including index persistence, prediction recording, metrics and 128 exhaustive checks per arm. Batch search timings exclude encoding and service overhead.",
+  "evaluate": {
+    "stage": "evaluate",
+    "started_at_utc": "2026-11-17T02:17:12.114705+00:00",
+    "completed_at_utc": "2026-11-17T02:20:00.191011+00:00",
+    "wall_seconds": 168.0763151000001,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 457314304,
+    "samples": 1552,
+    "sampling_seconds": 0.1,
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "591dffbe7e7f8145f020bd0c6a3fd64903b8ab434cb1559fb2b2d36d8f85c56f",
+    "scope": "Owned process RSS only; sampled peak is a lower bound. Excludes drivers, filesystem cache, other applications and separate stages.",
+    "sampled_worker_peak_rss_bytes": 453095424
+  },
+  "audit": {
+    "stage": "audit",
+    "started_at_utc": "2026-11-17T02:20:18.088091+00:00",
+    "completed_at_utc": "2026-11-17T02:20:40.806790+00:00",
+    "wall_seconds": 22.718711800000165,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 531537920,
+    "samples": 212,
+    "sampling_seconds": 0.1,
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "591dffbe7e7f8145f020bd0c6a3fd64903b8ab434cb1559fb2b2d36d8f85c56f",
+    "scope": "Owned process RSS only; sampled peak is a lower bound. Excludes drivers, filesystem cache, other applications and separate stages.",
+    "sampled_worker_peak_rss_bytes": 527319040
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "frozen_at_utc": "2026-11-17T02:15:28.529337+00:00",
+  "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+  "fit": "All fitting positives before 2019-11-13; last20 pre-impression clicked histories; no development target updates.",
+  "architecture": "SHA256 tokens of category/subcategory/title; masked mean64-dimensional trainable word embeddings; tanh article projection; mean last20 article vectors; linear query projection; L2 normalization; generic trainable empty-history query.",
+  "configuration": {
+    "epochs": 3,
+    "dimension": 64,
+    "seed": 20261116,
+    "batch_size": 256,
+    "token_buckets": 32768,
+    "token_length": 32,
+    "history_length": 20,
+    "temperature": 0.1,
+    "learning_rate": 0.001,
+    "clipnorm": 1.0
+  },
+  "objective": "TFRS in-batch softmax; duplicate candidate-ID accidental negatives removed.",
+  "selection": "One predefined configuration, fixed final epoch. No development-based stopping or model selection.",
+  "comparators": [
+    "Same saved initial content weights, identity query projection",
+    "Previously frozen popularity baseline"
+  ],
+  "index": "FAISS exact IndexFlatIP; strict first_seen < query time; adaptive overretrieval and deterministic boundary ties. Label-free earlier exposures can expand catalog.",
+  "evaluation": "All 61,894 training-archive development impressions; all positives retained, including unavailable items. Ranking and catalog recall20/100, nDCG100; cold-user, cold-positive, empty-history and stricter fit-unseen-content segments, daily reports.",
+  "verification": "All-query eligibility/cardinality, persisted-index use, bitwise weights reload, 128 label-independent exhaustive float64 queries per arm (score1e-5/boundary1e-6 tolerances), independent TSV metric audit all groups tolerance1e-10.",
+  "final_holdout": "Official MINDsmall_dev.zip remains unopened. No final labels or predictions in this increment.",
+  "source_sha256": {
+    "src/newsrec/evaluate_retrieval.py": "2c84e6cf0d303b89a7d67c5b70f53549b7b22bb8de84f59c616210b72f876844",
+    "src/newsrec/retrieval_data.py": "fbea4a01318eed206ade7a4099801871758005d9195b50989bfab9ba4d0d296b",
+    "src/newsrec/retrieval_index.py": "336d05ca1a3c9196d921b4d6d279552237921c7a013d8ae4c4cf67c19d50b7f7",
+    "src/newsrec/retrieval_model.py": "032d67e08af4313e841df8469a4dc14ab1f066f8b1d5e83f37cb4b7cb25e6e2d",
+    "src/newsrec/train_retrieval.py": "2b5dc241ea3c6250cae80d859d8e2f2424ad6b58b045e44b2eb8c29bc5af2889",
+    "scripts/audit_retrieval.py": "9d07602e5a1461a69a1d2f951855d23bacfdaf833a366744892482b80c147a52",
+    "scripts/audit_baseline.py": "192303fdede73f2115f39b7deb40150bab7b3c34a482f10c30255fa7c10364c1"
+  },
+  "environment": {
+    "TF_USE_LEGACY_KERAS": "1",
+    "TF_NUM_INTRAOP_THREADS": "4",
+    "TF_NUM_INTEROP_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "TF_CPP_MIN_LOG_LEVEL": "2",
+    "TF_ENABLE_ONEDNN_OPTS": "0"
+  },
+  "runtime": "Native Windows CPU, four intra-op/FAISS threads, one inter-op thread. Actual descendant worker RSS sampled every0.1s; launchers separately recorded.",
+  "private_original_protocol_sha256": "591dffbe7e7f8145f020bd0c6a3fd64903b8ab434cb1559fb2b2d36d8f85c56f"
+}
