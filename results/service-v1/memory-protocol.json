@@ -1,0 +1,10 @@
+{
+  "frozen_at_utc": "2026-11-18T23:25:38.977890+00:00",
+  "reason": "Initial resource sampler measured only the Windows venv launchers (4,243,456 bytes each), not their Python children. Those memory figures are invalid for API memory; original files retained. Initial HTTP latency and completed behavioral checks remain valid.",
+  "workload": "One unchanged service process, fresh lazy catalog load, then64 uncached requests with4 clients cycling the8 retained development replay receipts. No labels, training, quality evaluation or prior checks repeated.",
+  "source_manifest_sha256": "0bf695adaaeb8d6118a95591a8e05f6e83b57b0ad00cbd21796cfc3c5169f505",
+  "sample_interval_seconds": 0.1,
+  "catalog_revision": 2,
+  "measurement": "Track launcher and recursively discovered child processes separately; peak worker RSS and simultaneous process-tree sum. Excludes Docker, client, driver and other applications.",
+  "final_holdout_opened": false
+}

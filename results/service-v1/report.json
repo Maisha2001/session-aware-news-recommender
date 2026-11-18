@@ -1,0 +1,204 @@
+{
+  "format_version": 1,
+  "completed_at_utc": "2026-11-18T23:27:09.267430+00:00",
+  "status": "passed",
+  "checks": {
+    "parity": {
+      "phase": "parity",
+      "started_at_utc": "2026-11-18T23:20:40.466789+00:00",
+      "completed_at_utc": "2026-11-18T23:21:22.477409+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "queries": 128,
+      "policies_per_query": 3,
+      "exact_top20_by_policy": {
+        "relevance": 128,
+        "fresh": 128,
+        "balanced": 128
+      },
+      "scores_compared": 7680,
+      "maximum_absolute_score_difference": 9.5367431640625e-07,
+      "strict_availability_passed": true,
+      "idempotent_requests": 128,
+      "cache_hits_checked": 128,
+      "first_request_including_lazy_index_ms": 1118.193999999903,
+      "serial_uncached_http": {
+        "count": 383,
+        "p50_ms": 57.81050000018695,
+        "p95_ms": 76.10589000009895,
+        "max_ms": 83.60190000007606
+      },
+      "serial_cached_http": {
+        "count": 128,
+        "p50_ms": 30.693899999960195,
+        "p95_ms": 41.29854000002524,
+        "max_ms": 43.73190000001159
+      },
+      "concurrent_uncached_http": {
+        "count": 64,
+        "p50_ms": 143.84424999991552,
+        "p95_ms": 167.8171699999893,
+        "max_ms": 198.7692000000152,
+        "clients": 4,
+        "wall_seconds": 2.5109041999999135,
+        "requests_per_second": 25.48882589785871
+      },
+      "limits": "Label-free subset with no prior session context. Only returned top20 and union size compared; not a new full ranking evaluation. HTTP latency includes SQL, cache and model calls; startup excluded except separately reported lazy index request."
+    },
+    "consistency": {
+      "phase": "consistency",
+      "started_at_utc": "2026-11-18T23:21:25.624473+00:00",
+      "completed_at_utc": "2026-11-18T23:21:29.836026+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "workers": 2,
+      "strict_delay_seconds": 300,
+      "inactivity_reset_seconds": 1800,
+      "feedback_and_cache_revision_checks": "passed",
+      "cross_worker_cache_and_idempotency": "passed",
+      "append_only_catalog_revision": 2,
+      "index_articles_each_worker": 51283,
+      "atomic_rollback": "passed",
+      "old_request_receipts_preserved": true,
+      "new_article_is_authored_fixture": true,
+      "limits": "The new vector is encoded and indexed; insertion does not guarantee appearance in top20."
+    },
+    "restart": {
+      "phase": "restart",
+      "started_at_utc": "2026-11-18T23:22:38.629969+00:00",
+      "completed_at_utc": "2026-11-18T23:22:39.939967+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "old_receipts_verified": 9,
+      "feedback_revision_preserved": 2,
+      "catalog_revision_preserved": 2,
+      "dismissal_preserved": true
+    },
+    "redis_down": {
+      "phase": "redis_down",
+      "started_at_utc": "2026-11-18T23:22:40.977773+00:00",
+      "completed_at_utc": "2026-11-18T23:22:41.881415+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "cache_failure_fallback": true,
+      "http_ms_including_failed_cache_calls": 587.7940000000308
+    },
+    "postgres_down": {
+      "phase": "postgres_down",
+      "started_at_utc": "2026-11-18T23:22:43.841368+00:00",
+      "completed_at_utc": "2026-11-18T23:22:53.918550+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "durable_store_fail_closed": true,
+      "http_status": 503
+    },
+    "recovered": {
+      "phase": "recovered",
+      "started_at_utc": "2026-11-18T23:22:57.128194+00:00",
+      "completed_at_utc": "2026-11-18T23:22:57.451880+00:00",
+      "status": "passed",
+      "final_holdout_opened": false,
+      "old_receipts_verified": 9,
+      "feedback_revision_preserved": 2,
+      "catalog_revision_preserved": 2,
+      "dismissal_preserved": true
+    }
+  },
+  "tests": {
+    "full": {
+      "passed": 68,
+      "skipped": 0,
+      "seconds": 13.627
+    },
+    "baseline": {
+      "passed": 40,
+      "skipped": 3,
+      "seconds": 1.578
+    }
+  },
+  "package": {
+    "verified_at_utc": "2026-11-18T23:26:02.912080+00:00",
+    "wheel_sha256": "537b2c5f627f2d6894f9561c7f068b238a3c7fef023d8c82d8117860530f95f7",
+    "wheel_bytes": 41608,
+    "returncode": 0,
+    "model_manifest_sha256": "f7c932d9477ef8685cd0da44ebcb30051acbc8a04652ef6d7f439e5cd301fadd",
+    "scope": "Fresh isolated target import with existing pinned service dependencies. Both trained weight files reloaded; authored arrays only, no repeated real-data evaluation.",
+    "outcome": "Fresh wheel imports, service factory, frozen content/session models, cold content encoding and identical reload predictions on authored inputs passed."
+  },
+  "preservation": {
+    "verified_at_utc": "2026-11-18T23:27:09.266996+00:00",
+    "status": "passed",
+    "existing_containers_unchanged": 7,
+    "compared_fields": [
+      "Id",
+      "Config",
+      "HostConfig",
+      "Mounts",
+      "Image",
+      "State"
+    ],
+    "news_services_stopped": true,
+    "news_database_volume_preserved": true,
+    "api_workers_stopped": true,
+    "final_holdout_opened": false
+  },
+  "resource_measurement": {
+    "started_at_utc": "2026-11-18T23:25:38.991934+00:00",
+    "completed_at_utc": "2026-11-18T23:25:47.800314+00:00",
+    "status": "passed",
+    "requests": 65,
+    "processes": {
+      "36244": {
+        "role": "launcher",
+        "peak_rss_bytes": 4243456
+      },
+      "10028": {
+        "role": "api_worker",
+        "peak_rss_bytes": 7475200
+      },
+      "38336": {
+        "role": "api_worker",
+        "peak_rss_bytes": 554917888
+      }
+    },
+    "actual_api_worker_peak_rss_bytes": 554917888,
+    "process_tree_peak_rss_bytes": 566636544,
+    "samples": 81,
+    "sampling_seconds": 0.1,
+    "all_owned_processes_stopped": true,
+    "final_holdout_opened": false,
+    "limits": "Separate bounded load probe on catalog revision2; sampled lower bound on peak, not the original parity run memory and not total machine use."
+  },
+  "resource_measurement_protocol": "memory-protocol.json",
+  "source_reference_report_sha256": "a1de374eaf07a02bc5d55dc1a83080a0f208fc36a34a27fd76833cad3b6d3eeb",
+  "source_prediction_compressed_sha256": "d3ed0c957ad001a9a10b65121d48cdf20f4fec66b1610a0f5899176887a1ab3a",
+  "verification_source_sha256": "79d3ace028feba62362959de9466039fe55541334e1c161e0177dcbe01dc3ff3",
+  "final_holdout_opened": false,
+  "limitations": [
+    "This is a local shared-token replay service; caller-supplied reader IDs and times are trusted. No public identity, rate limiting or live engagement validity.",
+    "Parity covers128 selected development impressions with no prior session context, three policies and top20 outputs. Earlier full evaluation stays unchanged; no new labels or final holdout were used.",
+    "Authored served-click, dismissal and new-article cases validate integration and consistency, not model quality.",
+    "One process serializes model calls and rebuilds the entire exact catalog on generation changes. HTTP results are a bounded local run, not a production capacity guarantee.",
+    "HTTP latency excludes process startup, with the first lazy index request reported separately. Memory comes from a separate65-request load probe and excludes Docker/client/driver/other apps.",
+    "Initial launcher-only memory readings were invalid for actual API memory and are superseded by recursive process-tree measurements; original private records are retained.",
+    "The first restart launch failed on Windows port reuse after completed parity/consistency. The unchanged app continued on a fresh free port; no completed checks or model evaluations were rerun.",
+    "Official validation remains unopened. Usable browsing demo and final evaluation/release remain unfinished."
+  ],
+  "environment": {
+    "os": "Windows-11-10.0.26300-SP0",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "logical_processors": 16,
+    "process_settings": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "dependencies": "requirements/service-recorded.txt",
+    "postgres": "17.6 pinned image;1 CPU/512MiB container ceiling",
+    "redis": "8.2.3 pinned image;1 CPU/256MiB container ceiling,128MiB cache limit",
+    "hardware_scope": "Local Windows CPU inference; one API process during throughput measurement; separate second worker used for consistency."
+  }
+}

@@ -1,0 +1,30 @@
+name: portfolio-news
+services:
+  postgres:
+    image: postgres:17.6@sha256:00bc86618629af00d2937fdc5a5d63db3ff8450acf52f0636ec813c7f4902929
+    environment:
+      POSTGRES_USER: portfolio_news
+      POSTGRES_DB: portfolio_news
+      POSTGRES_PASSWORD: ${NEWS_DB_PASSWORD:?Set a private database password}
+    ports:
+      - '127.0.0.1:55435:5432'
+    volumes:
+      - news_pg:/var/lib/postgresql/data
+    restart: 'no'
+    cpus: 1
+    mem_limit: 512m
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U portfolio_news -d portfolio_news']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  redis:
+    image: redis:8.2.3-alpine@sha256:08ad0b1d280850169a790dba1393ff7a90aef951fc19632cf4d3ce4f78e679ba
+    command: ['redis-server', '--requirepass', '${NEWS_REDIS_PASSWORD:?Set a private cache password}', '--appendonly', 'no', '--save', '', '--maxmemory', '128mb', '--maxmemory-policy', 'allkeys-lru']
+    ports:
+      - '127.0.0.1:56385:6379'
+    restart: 'no'
+    cpus: 1
+    mem_limit: 256m
+volumes:
+  news_pg:

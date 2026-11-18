@@ -3,8 +3,8 @@
 The ranker combines the frozen content vectors, a reader's supplied longer-term
 history, earlier same-session feedback and an article-age proxy. It includes a
 separately trained long-term-only comparison and fixed freshness/diversity
-controls. This is an offline research workflow; the service and browsing demo
-are not yet implemented.
+controls. This is an offline research workflow. The [local service](service.md) reuses
+these frozen models; the browsing demo remains unfinished.
 
 ## Run
 
@@ -118,7 +118,7 @@ use only known logged clicks; full-catalog AUC is not reported. Without logging
 propensities or randomized data, these results cannot support unbiased inverse-
 propensity estimates, causal claims or live engagement lift.
 
-Exposure-frequency bins use fitting exposures only: unseen, 1–99, 100–999 and
+Exposure-frequency bins use fitting exposures only: unseen, 1â€“99, 100â€“999 and
 1,000 or more. Event recall within each bin and macro recall across distinct
 clicked articles show sensitivity to frequently exposed items. These descriptive
 comparisons do not remove selection bias. Cold-user, cold-positive-article,

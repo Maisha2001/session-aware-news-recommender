@@ -1,0 +1,29 @@
+{
+  "frozen_at_utc": "2026-11-18T23:20:31.272404+00:00",
+  "source_sha256": {
+    "src/newsrec/api.py": "73abcea7b2bcb0626a2bbb29148c277c8cf47904c9ec1cdf1e93d8ab7172e671",
+    "src/newsrec/service_engine.py": "a4067e7e3f6162bb5c5a70d9f5fe81a1c11c16fc6f23f95f5816eedc873200a5",
+    "src/newsrec/service_store.py": "9384b8c202d77fa805332556a065b19e08606228e3368dc15b8a3f93af1fe072",
+    "src/newsrec/service_setup.py": "4710ef5ddfd1f58550853b6c1b71b265a2aebe47aba5b1ab119a4f9fe48c1161",
+    "scripts/audit_service.py": "79d3ace028feba62362959de9466039fe55541334e1c161e0177dcbe01dc3ff3"
+  },
+  "reference_predictions_sha256": "d3ed0c957ad001a9a10b65121d48cdf20f4fec66b1610a0f5899176887a1ab3a",
+  "prepared_manifest_sha256": "d70b39ca7e2eeaca0b548bf82b4e4abd85ddbfdb6901c0ae3606a65476f73f3d",
+  "model_manifest_sha256": "f7c932d9477ef8685cd0da44ebcb30051acbc8a04652ef6d7f439e5cd301fadd",
+  "selection": "First128 SHA256(news-service-parity-v1:<impression_id>) among chronological development impressions with no prior session context.",
+  "selected_impressions_sha256": "343a17ca2cebc981e1559389f7bdf4befbb094a78800f36ccaa4f9bbb000506c",
+  "queries": 128,
+  "policies": [
+    "relevance",
+    "fresh",
+    "balanced"
+  ],
+  "top_k": 20,
+  "score_absolute_tolerance": 5e-06,
+  "ranking_expected": "Exact top20 for each policy; report any failure before altering implementation. No model, threshold or policy retuning.",
+  "consistency": "Real PostgreSQL/Redis and two independent HTTP processes. Immutable receipts, delayed clicks, dismissals, cache generation, append/rollback, worker restart, Redis outage fallback and PostgreSQL failure/recovery.",
+  "timing": "384 serial uncached requests with first lazy-index request separate;128 warm-cache requests;64 uncached requests with4 clients to one process.",
+  "memory": "Sample owned API worker RSS every100ms, report individual and simultaneous aggregate maxima. Exclude Docker, audit client, driver and unrelated applications.",
+  "labels_opened_for_this_check": false,
+  "final_holdout_opened": false
+}

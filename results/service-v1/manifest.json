@@ -1,0 +1,9 @@
+{
+  "format_version": 1,
+  "sha256": {
+    "memory-protocol.json": "5bc1ee26569a5c00d7bb875cca7d9a3bca28894b208388531e77cecab92d0e71",
+    "protocol.json": "f88944abeb05b897eabe298e6eed219d8e2207473d8297d98a20909b958c97db",
+    "report.json": "39bf9c142ecd23052790e2cc978c1a4806c38adf23fbd3f7d10c07995649141c",
+    "restart-launcher-diagnostic.json": "45d037c1c1ca4ffe19d006f4e13e2559df1884f13cd8460d45211f0cce65d61b"
+  }
+}

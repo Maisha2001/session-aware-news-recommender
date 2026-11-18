@@ -4,13 +4,15 @@ Chronological news recommendation research with a licensed data pipeline,
 frozen baselines, learned content retrieval and an exact temporal vector index.
 The learned encoder can represent new articles from titles and categories;
 all model results are measured on a fixed chronological development split.
-The serving application and final holdout evaluation remain unfinished. This is
-a research implementation, not a complete deployed product.
+A local authenticated recommendation service now adds durable feedback,
+content updates and a revision-aware cache. The browsing demo and final holdout
+evaluation remain unfinished; this is a research implementation.
 
 See [learned retrieval setup and methods](docs/retrieval.md) for TensorFlow/TFRS,
 FAISS, cold-start definitions, saved-model access and reproducible evaluation.
 The [session-ranking workflow](docs/session-ranking.md) adds delayed-feedback
-sequence modeling and freshness/diversity controls.
+sequence modeling and freshness/diversity controls. See the [service guide](docs/service.md)
+for FastAPI, PostgreSQL, Redis, model import and HTTP requests.
 
 ## Run
 
@@ -163,3 +165,20 @@ run 40 baseline tests and skip the two optional modeling modules. Run
 `python scripts/verify_session.py` to verify the published session evidence.
 The official validation archive remains unopened. Service integration and the
 usable browsing demo remain unfinished.
+
+## Measured local service
+
+The [service verification](results/service-v1/report.json) matched the preserved
+development top 20 exactly for 128 queries under all three policies (384 slates,
+7,680 scores; maximum absolute score difference 9.54e-7). SQL idempotency, delayed
+feedback, dismissals, two-worker cache/index revisions, restart, Redis fallback
+and PostgreSQL failure/recovery passed. The catalog contained 51,282 licensed
+articles; one authored insertion verified cold-content updates without retraining.
+
+HTTP p95 was 76.11 ms for 383 uncached serial requests and41.30ms for 128 cache hits.
+With four clients, 64 uncached requests reached p95 167.82 ms and 25.49 requests/s.
+The first lazy-index request took 1.12 s. These are bounded local measurements, not
+a production capacity claim. A separate 65-request probe measured 554,917,888 bytes
+peak actual API worker RSS, excluding Docker, clients and unrelated applications.
+See [setup, contracts and limitations](docs/service.md). The browsing demo and
+final holdout evaluation remain unfinished.

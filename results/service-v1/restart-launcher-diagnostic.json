@@ -1,0 +1,7 @@
+{
+  "recorded_at_utc": "2026-11-18T23:22:34.179489+00:00",
+  "failure": "Windows port bind probe returned10048 immediately after terminating worker-a. The launcher stopped both owned API workers and preserved completed parity/consistency reports.",
+  "correction": "Restart the unchanged application on a newly verified free loopback port8017, using the same durable database, cache and model. Continue only unfinished restart/outage checks.",
+  "completed_checks_rerun": false,
+  "implementation_or_scores_changed": false
+}
