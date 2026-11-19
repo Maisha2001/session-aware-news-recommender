@@ -20,7 +20,8 @@ reports or this repository.
 Record the archive revision, byte count and SHA256 after a successful download.
 Only extract training `news.tsv` and `behaviors.tsv` for development. Keep the
 official validation archive unopened until the final protocol and models are
-frozen. The ingestion manifest records exact input hashes; filenames alone do
+frozen. The completed [final evaluation](final-evaluation.md) records the later
+opening, prediction freeze and independent audit. The ingestion manifest records exact input hashes; filenames alone do
 not establish which archive supplied a file.
 
 The parser retains anonymized IDs locally. No attempt is made to identify users.

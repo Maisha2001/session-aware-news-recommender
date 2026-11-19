@@ -1,184 +1,173 @@
 # Session-Aware News Recommendation
 
-Chronological news recommendation research with a licensed data pipeline,
-frozen baselines, learned content retrieval and an exact temporal vector index.
-The learned encoder can represent new articles from titles and categories;
-all model results are measured on a fixed chronological development split.
-A local authenticated recommendation service now adds durable feedback,
-content updates and a revision-aware cache. The browsing demo and final holdout
-evaluation remain unfinished; this is a research implementation.
+**Fieldnotes** is a local news recommendation application built around a trained
+content retriever, a delayed-feedback session ranker, and an auditable chronological
+evaluation. Browse stories, save or dismiss them, adjust freshness and variety,
+inspect ranking details, and compare measured model results.
 
-See [learned retrieval setup and methods](docs/retrieval.md) for TensorFlow/TFRS,
-FAISS, cold-start definitions, saved-model access and reproducible evaluation.
-The [session-ranking workflow](docs/session-ranking.md) adds delayed-feedback
-sequence modeling and freshness/diversity controls. See the [service guide](docs/service.md)
-for FastAPI, PostgreSQL, Redis, model import and HTTP requests.
+The system combines TensorFlow/TFRS, an exact temporal FAISS index, FastAPI,
+PostgreSQL, Redis and local MLflow tracking. It is a research demonstration:
+catalog recall is low, and offline ranking does not establish live engagement lift.
 
-## Run
+![Authored Fieldnotes interface preview](docs/images/authored-preview-desktop.png)
 
-Python 3.11 or later, with no runtime package dependencies:
+*This screenshot uses invented stories and deterministic UI fixtures. It shows
+the interface, not trained inference or benchmark results. Screenshots of the
+verified model-backed demo stay private because they contain licensed news text.*
+
+## Try the interface
+
+From a clone of this repository, using Python 3.11 or later:
 
 ```sh
 python -m venv .venv
 # Activate .venv for your shell.
+python -m pip install -e . -r requirements/browser.txt
+python -m uvicorn examples.preview:create_preview --factory --host 127.0.0.1 --port 8025
+```
+
+Open **http://127.0.0.1:8025**. This explicitly labeled authored preview needs no
+dataset, model weights, Docker or account. Its illustrative comparison numbers
+are not experimental evidence. Stop it with Ctrl+C.
+
+For **real model inference**, follow the [demo guide](docs/demo.md), including
+[licensed data access](docs/data.md), [model reproduction](docs/session-ranking.md)
+and [service setup](docs/service.md). The real demo uses stories from the training
+archive, synthetic interest profiles, explicit feedback and a historical clock.
+Final evaluation contributes aggregate comparison statistics only; no final
+test cases enter the feed. The [mobile preview](docs/images/authored-preview-mobile.png)
+uses the same authored fixtures.
+
+## Final heldout results
+
+The reserved official MIND-small validation archive contains **73,152 impressions
+on November 15, 2019**, 2,740,998 logged candidates and 111,383 positives.
+Every impression, candidate and positive is retained, including 132 positives
+unavailable for temporal retrieval. The observed catalog contains 65,238 articles.
+All three learned models, policies and fitting counts were frozen before opening
+the archive. No final outcome changed a model, threshold or exclusion.
+
+| Frozen model | Logged AUC | Logged nDCG@10 | Catalog recall@100 |
+| --- | ---: | ---: | ---: |
+| Popularity | 0.4950 | 0.2808 | 0.267% |
+| Learned content retrieval | 0.5957 | 0.3605 | 1.198% |
+| Long-history-only ranker | 0.5949 | 0.3598 | — |
+| Session ranker | 0.5989 | 0.3623 | 1.263% |
+
+Logged metrics rank the observed candidate slate. Catalog recall instead uses all
+earlier observed articles and counts only known logged positives; unexposed
+relevance is unknown. Popularity and content each retrieve 100 candidates, while
+the session ranker reranks their deduplicated union. Different candidate pools
+limit attribution to the ranker alone. The union's recall ceiling is only **1.400%**.
+
+Only 4,003 final impressions have eligible session feedback. In this segment,
+session nDCG@10 is **0.36146**, slightly below long-history-only **0.36168**.
+Thus the small aggregate improvement does not establish a session-context benefit
+in every group. Empty-history session catalog recall@100 is just **0.00753%**.
+One seed and one fixed configuration do not establish statistical significance.
+
+| Catalog session policy | Recall@10 | Categories@10 | First-seen age, hours@10 |
+| --- | ---: | ---: | ---: |
+| Relevance | 0.394% | 3.14 | 56.52 |
+| Freshness | 0.516% | 3.17 | 28.76 |
+| Balanced variety | 0.458% | 3.68 | 35.19 |
+
+These fixed presets trade ranking, age and category mix. First observation is
+not publication time. Freshness uses a 24-hour exponential decay scale
+(about 16.64-hour half-life). Scores are uncalibrated.
+
+**Replay semantics:** earlier final clicks may update later session context only
+after a strict five-minute delay; a gap greater than 30 minutes resets the session.
+Current, equal-time and future outcomes never enter a query. Every prediction was
+frozen before metrics were aggregated. This is a causal replay using delayed
+labels, not an entirely label-free simulation. MIND lacks actual click times,
+session boundaries, publication times and exposure propensities.
+
+See [final methods and reproduction](docs/final-evaluation.md), the
+[complete report](results/heldout-v1/report.json),
+[frozen protocol](results/heldout-v1/protocol.json),
+[independent audit](results/heldout-v1/audit.json) and
+[runtime record](results/heldout-v1/runtime.json). All segment, exposure-frequency,
+article-macro, coverage and daily views remain available. No unbiased propensity
+correction, causal engagement result or full-catalog AUC is claimed.
+
+## Earlier development evidence
+
+Fitting uses 95,071 impressions from November 9–12; chronological development
+uses all 61,894 impressions, 2,454,102 candidate entries and 94,786 positives from
+November 13–14 inside the training archive. These stages preceded final evaluation.
+Their original reports and `final_holdout_opened: false` flags are preserved.
+
+The content encoder has 2,105,408 parameters and was trained for three fixed
+epochs on all 141,558 fitting clicks. A frozen mean-history representation retrieves
+articles using title/category content, including new article IDs. Two 33,281-parameter
+rankers compare longer history with a 32-unit GRU using delayed session feedback.
+No model was selected or retuned using final outcomes.
+
+| Development model | Logged AUC | Logged nDCG@10 | Catalog recall@100 |
+| --- | ---: | ---: | ---: |
+| Popularity | 0.5015 | 0.2806 | 3.582% |
+| Learned content | 0.6141 | 0.3602 | 2.251% |
+| Long-history-only | 0.6146 | 0.3641 | — |
+| Session | 0.6202 | 0.3680 | 3.395% |
+
+Content retrieval underperformed popularity on development catalog recall despite
+better logged ranking. Session article-macro recall@10 also fell below long-history-only
+(0.3879 versus 0.3917). These limitations remain part of the evidence.
+See [baseline evaluation](docs/evaluation.md), [content retrieval](docs/retrieval.md)
+and [session modeling](docs/session-ranking.md) for training, audits and exact hashes.
+
+## Service and compute evidence
+
+The [service audit](results/service-v1/report.json) matched 384 preserved development
+slates and 7,680 scores across three policies. SQL idempotency, delayed feedback,
+dismissals, two-worker revisions, restart and dependency-failure recovery were tested.
+The local service supports content insertion with the frozen encoder, durable
+receipts/feedback and an optional revision-aware Redis cache.
+
+Measured HTTP p95 was **76.11 ms** for 383 serial uncached requests and **41.30 ms**
+for 128 cache hits. Four clients making 64 uncached requests measured p95 **167.82 ms**
+and **25.49 requests/s**. The first lazy-index request took 1.12 s. A separate
+65-request probe measured 554,917,888 bytes peak actual API worker RSS. These are
+bounded local measurements, not a production capacity guarantee; Docker, clients
+and unrelated applications are excluded from worker memory.
+
+Final prediction, recording and inline checks took **538.38 seconds** internally
+with four CPU threads. The external actual-worker peak was **750,829,568 bytes**;
+metric aggregation, independent audit, Docker and other applications are excluded.
+The independent audit checks every impression and metric group, while 128 exhaustive
+float64 retrieval checks and 256 reload predictions per learned arm verify numerical
+behavior. CPU reload equality does not guarantee cross-platform retraining equality.
+
+The [release evidence](results/release-v1/manifest.json) records desktop/mobile
+browser verification, package installation and local MLflow metrics/artifact checks.
+The application is loopback-only and has no public-user authentication or automatic
+retention policy. See [service contracts](docs/service.md) and [demo operation](docs/demo.md).
+
+## Reproduce and verify
+
+The lightweight ingestion and baseline workflow has no runtime dependencies:
+
+```sh
 python -m pip install -e . -r requirements/test.txt
 python -m pytest -q
-```
-
-Obtain the **MIND-small training archive** following [data access](docs/data.md).
-Extract its `news.tsv` and `behaviors.tsv` into a private directory. Keep the
-official validation archive sealed for the final project evaluation.
-
-```sh
 newsrec ingest --news /private/mind/train/news.tsv --behaviors /private/mind/train/behaviors.tsv --database /private/news.sqlite --cutoff 2019-11-13T00:00:00
 newsrec evaluate --database /private/news.sqlite --output /private/baseline-report.json
-```
-
-The cutoff was frozen before scoring after training-only date inspection.
-Existing databases and reports are never overwritten. Raw data, article
-text, user IDs and per-impression predictions stay outside the repository.
-
-See [evaluation](docs/evaluation.md) for metric definitions and limitations.
-Tests use authored fixtures, not benchmark data or measured model evidence.
-
-## Measured baseline
-
-MIND-small training archive: 95,071 fitting impressions (November 9-12, 2019),
-61,894 chronological development impressions (November 13-14), and 51,282 articles.
-All 2,454,102 development candidate entries and 94,786 positives are retained.
-The official validation archive remains unopened.
-
-| Logged-candidate ranking | AUC | Mean clicked RR | nDCG@10 | Recall@10 |
-| --- | ---: | ---: | ---: | ---: |
-| Frozen popularity | 0.5015 | 0.2225 | 0.2806 | 0.4932 |
-| Fixed hash order | 0.5078 | 0.2259 | 0.2829 | 0.4897 |
-
-Popularity catalog recall is **0.24% at 20** and **3.58% at 100**. These use
-the previously observed catalog, a much harder candidate pool than logged ranking.
-Popularity does not consistently improve on the untrained comparison. In 37,961
-development impressions, at least one clicked article was absent from fitting
-candidates; this baseline gives those articles no learned content score.
-These offline results make no claim about live engagement or statistical significance.
-
-The evaluator took 25.12 seconds on CPU, with a measured 57.43 MB peak worker
-working set (61.64 MB for launcher and worker together). An independent TSV audit
-matched all 96 metric values across 16 groups and the complete ranked prediction
-digest. See [full results and evidence](results/baseline-v1/report.json) and
-[evaluation details](docs/evaluation.md). The baseline tests use authored fixtures.
-
-```sh
-python scripts/verify_evidence.py
-python scripts/audit_baseline.py --news /private/mind/train/news.tsv --behaviors /private/mind/train/behaviors.tsv --database /private/news.sqlite --report /private/baseline-report.json --output /private/audit.json
-```
-
-## Measured learned retrieval
-
-The fixed three-epoch content model was trained on all 141,558 fitting clicks
-with 2,105,408 parameters. Both content arms use the same 61,894 development
-impressions and retain all 94,786 positives. No final holdout data was opened.
-
-| Model | Logged AUC | Logged nDCG@10 | Catalog recall@20 | Catalog recall@100 |
-| --- | ---: | ---: | ---: | ---: |
-| Frozen popularity | 0.5015 | 0.2806 | 0.24% | 3.58% |
-| Initial content weights | 0.5558 | 0.3108 | 0.39% | 0.95% |
-| Learned content | 0.6141 | 0.3602 | 0.74% | 2.25% |
-
-Learning improves the content model's observed ranking and retrieval metrics,
-but **catalog recall@100 remains below popularity**. The model retrieves only a
-small fraction of clicked items from the full observed catalog. Empty-history
-recall@100 is 0.067%; the stricter unseen-content-positive segment reaches 1.74%.
-These weaknesses remain visible; no checkpoint was selected or retuned using
-these outcomes. There is no claim of statistical significance or live engagement lift.
-
-The exact FAISS index contains 51,282 article vectors. All returned articles
-pass strict time-availability checks. An independent raw-TSV audit reproduced
-every published segment and daily metric and both complete prediction digests.
-Exhaustive float64 checks passed the frozen tolerances on 128 queries per arm;
-the initial arm had one ordering difference within floating-point tolerance.
-Saved-weight reloads were bitwise equal on the measured CPU.
-
-Training took 60.44 seconds on CPU. The complete two-arm evaluation took
-164.59 seconds internally, including prediction recording and audits; the
-external worker peak was 453.10 MB. Training memory samples were lost in a
-monitor-exit race, so no training memory figure is claimed. The index is
-13.13 MB per arm, and learned-arm catalog-search batch p95 was 39.34 ms for
-128 queries; this is not service latency. See the [full evidence](docs/retrieval.md).
-
-```sh
-python -m pip install -e . -r requirements/test.txt -r requirements/retrieval.txt
-python -m pytest -q
 python scripts/verify_evidence.py
 python scripts/verify_retrieval.py
+python scripts/verify_session.py
+python scripts/verify_service.py
+python scripts/verify_final.py
 ```
 
-The retrieval tests use authored fixtures to cover training, index persistence,
-time filtering,
-new-article encoding, model reload and the independent metric audit. Lightweight
-baseline environments skip the optional modeling test modules.
+Optional model, service, browser and tracking tests require their pinned environments;
+otherwise those modules skip explicitly. Fixtures are authored, not benchmark evidence.
+CI exercises the lightweight package, trained-model fixtures, dedicated PostgreSQL/Redis,
+browser interactions and local MLflow round trips. See the [CI configuration](.github/workflows/ci.yml).
 
-## Measured session ranking
-
-Two fixed three-epoch rankers use the unchanged content encoder: a long-term-only
-comparison and a 32-unit GRU with delayed session feedback. Each has 33,281 ranker
-parameters. All 141,558 fitting positives are used with logged nonclicked negatives.
-Five-minute feedback availability and 30-minute inactivity sessions are simulation
-assumptions because click times are unavailable. Only 3,511 of 61,894 development
-impressions have prior session context; all other impressions remain included.
-
-| Logged ranking | AUC | nDCG@10, all | nDCG@10, with session | Categories@10 | First-seen age hours@10 |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Long-term only | 0.6146 | 0.3641 | 0.3553 | 4.98 | 26.94 |
-| Session | 0.6202 | 0.3680 | 0.3582 | 5.00 | 26.27 |
-| Session + fresh | n/a | 0.3666 | 0.3584 | 5.01 | 23.42 |
-| Session + balanced | n/a | 0.3652 | 0.3569 | 5.16 | 24.25 |
-
-AUC is reported for model scores; slate controls rearrange the top ten and are
-evaluated as rankings. These are one-seed offline observations, not a claim of
-statistical significance or causal engagement improvement. Freshness uses first
-observation, not an actual publication timestamp. Session article-macro recall@10
-was 0.3879 versus 0.3917 for long-term only, so the small aggregate improvement
-does not extend to every view of the data. The fresh and balanced presets reduce
-logged nDCG slightly while changing the age and category mix.
-
-| Retrieved union, session ranking | Recall@10 | Recall@100 | Candidate-pool recall | Categories@10 | First-seen age hours@10 |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| relevance | 0.99% | 3.39% | 5.61% | 3.16 | 65.39 |
-| fresh | 1.24% | 3.39% | 5.61% | 3.18 | 49.78 |
-| balanced | 1.11% | 3.39% | 5.61% | 3.80 | 53.78 |
-
-The pool combines the frozen learned 100 and popularity 100 without injecting
-clicked items. Its limited coverage remains a bottleneck. Unexposed articles
-have unknown relevance: these catalog figures count known logged positives and
-do not establish full-catalog relevance or live lift. Exposure-frequency strata
-and macro recall across clicked articles are reported as descriptive sensitivity
-checks, with no inverse-propensity or unbiased-causal claim.
-
-Independent checks verified all 156,965 context rows, 430 metric values across
-50 groups, complete prediction/pool digests and 128 sampled policy queries.
-Saved-model reloads matched 256 impressions per arm bitwise. Training took
-31.16 seconds; the complete offline evaluation took 374.64 seconds, including
-slate policies, metrics and private prediction recording. See
-[methods, evidence and limitations](docs/session-ranking.md).
-
-The 55 authored-fixture tests cover the complete workflow. Lightweight environments
-run 40 baseline tests and skip the two optional modeling modules. Run
-`python scripts/verify_session.py` to verify the published session evidence.
-The official validation archive remains unopened. Service integration and the
-usable browsing demo remain unfinished.
-
-## Measured local service
-
-The [service verification](results/service-v1/report.json) matched the preserved
-development top 20 exactly for 128 queries under all three policies (384 slates,
-7,680 scores; maximum absolute score difference 9.54e-7). SQL idempotency, delayed
-feedback, dismissals, two-worker cache/index revisions, restart, Redis fallback
-and PostgreSQL failure/recovery passed. The catalog contained 51,282 licensed
-articles; one authored insertion verified cold-content updates without retraining.
-
-HTTP p95 was 76.11 ms for 383 uncached serial requests and41.30ms for 128 cache hits.
-With four clients, 64 uncached requests reached p95 167.82 ms and 25.49 requests/s.
-The first lazy-index request took 1.12 s. These are bounded local measurements, not
-a production capacity claim. A separate 65-request probe measured 554,917,888 bytes
-peak actual API worker RSS, excluding Docker, clients and unrelated applications.
-See [setup, contracts and limitations](docs/service.md). The browsing demo and
-final holdout evaluation remain unfinished.
+Version 1.0.0 includes an installable Python wheel with the demo's HTML/CSS/JavaScript.
+Use a repository clone for examples, scripts, aggregate reports and deployment files.
+Model weights and raw MIND data are not redistributed. Reproduce the frozen artifacts
+locally with the documented commands and compare their hashes and numerical tolerances.
+Data access remains subject to the publisher's noncommercial research terms.
+Keep raw text, anonymized user IDs, credentials and per-impression predictions private.

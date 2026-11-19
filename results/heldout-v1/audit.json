@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "impressions_checked": 73152,
+  "context_impressions_checked": 73152,
+  "with_session_context": 4003,
+  "maximum_feature_difference": 9.327706201878172e-08,
+  "metric_values_checked": 802,
+  "metric_groups_checked": 94,
+  "maximum_aggregate_difference": 7.636930560162014e-09,
+  "policy_queries_checked": 128,
+  "policy_decisions_checked": 512,
+  "maximum_policy_utility_difference": 0.0,
+  "tolerances": {
+    "context": 1e-06,
+    "ranking": 1e-10,
+    "age": 1e-08,
+    "cosine_diversity": 1e-07,
+    "policy_utility": 1e-06
+  },
+  "prediction_sha256": "d1ebe8511498a5655d4564600c37ecc0c569b8bc55f4df0149ddbf4b80a50344",
+  "uncompressed_prediction_sha256": "d1d3ecc732b3baf48ac081f75eb83287e3ebf9260d94c6dd539fe40862dd56fd",
+  "report_sha256": "df03daf065a18c76e30953c9ce08469ebb6c82ee3614c56f7976425ac38fd252",
+  "method": "Independent raw training/final TSV parsing; per-user float64 delayed contexts; all labels, candidates, histories, fit counts, availability, metric groups, exposure and coverage; sampled brute-force controls. No newsrec imports.",
+  "started_at_utc": "2026-11-19T01:48:09.425449+00:00",
+  "completed_at_utc": "2026-11-19T01:52:34.149800+00:00",
+  "wall_seconds": 264.72436410000046,
+  "source_sha256": {
+    "audit_heldout.py": "a80a2aa583268ca656a99878b48acd7c70d9efa7d1c900ad369cb65e85df617c",
+    "audit_session.py": "78027b6b888dea853fe8079dd004f3c72da940b3bfa7cb68609f09a9cde30fa6",
+    "audit_baseline.py": "192303fdede73f2115f39b7deb40150bab7b3c34a482f10c30255fa7c10364c1"
+  }
+}

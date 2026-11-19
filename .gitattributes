@@ -1,2 +1,2 @@
-* text=auto eol=lf
-results/** -text
+# Preserve audited source and evidence bytes exactly across platforms.
+* -text

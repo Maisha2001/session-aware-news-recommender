@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldnotes — A news discovery lab</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to stories</a>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="Fieldnotes home"><span class="brand-mark">fn</span><span>fieldnotes<small>A news discovery lab</small></span></a>
+    <nav aria-label="Views"><button id="feed-tab" class="nav-tab selected" aria-pressed="true">Your feed</button><button id="results-tab" class="nav-tab" aria-pressed="false">Model results</button></nav>
+    <span class="research-label">Historical replay</span>
+  </header>
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+  <div id="error" class="error" role="alert" hidden><span id="error-text"></span><button id="retry">Try again</button></div>
+  <main id="main">
+    <section id="feed-view" class="workspace" aria-labelledby="feed-title">
+      <aside class="sidebar">
+        <section><p class="eyebrow">MAKE IT YOURS</p><h2>Your starting lens</h2><p class="muted">Choose an interest, then see what your next few choices change.</p><div id="profiles" class="profiles"></div><p class="caption">Changing your lens starts a new session.</p></section>
+        <section class="session-card"><p class="eyebrow">REPLAY CLOCK</p><p id="clock" class="clock">14 Nov 2019 · 12:00</p><p class="caption">Dataset time, not today's news.</p><button id="refresh" class="primary wide">Refresh feed · +6 min</button><p class="caption">Feedback becomes available after five minutes. Refresh advances this simulated clock.</p><button id="reset" class="text-button">Start a new session</button></section>
+        <section><h3>Recent choices</h3><p id="activity-empty" class="caption">Your feedback will appear here.</p><ol id="activity" class="activity"></ol></section>
+      </aside>
+      <div class="feed-main">
+        <div class="intro"><p class="eyebrow">A LITTLE CURIOSITY GOES A LONG WAY</p><h1 id="feed-title">Find your next<br><em>perspective.</em></h1><p>Stories shaped by your interests, recent choices and a little room for discovery.</p></div>
+        <section class="ranking-controls" aria-label="Ranking preference">
+          <div><h2>For your next read</h2><p id="feed-meta" class="caption">Loading your recommendations…</p></div>
+          <fieldset><legend class="sr-only">Ranking preference</legend><label><input type="radio" name="policy" value="relevance" checked><span>Relevant</span></label><label><input type="radio" name="policy" value="fresh"><span>Fresher</span></label><label><input type="radio" name="policy" value="balanced"><span>More varied</span></label></fieldset>
+        </section>
+        <p id="policy-description" class="policy-description">Order by the frozen model's ranking score.</p>
+        <div id="feed" class="story-grid" aria-busy="true"><div class="loading-card">Preparing your feed…</div></div>
+        <details class="interest-detail"><summary>What's behind this starting lens?</summary><p class="caption">These previously available stories provide a content profile. They are authored starting choices, not a real person's history.</p><ul id="history"></ul></details>
+        <p class="footnote">A research demo using licensed MIND news content. Recommendations are experimental. Feedback changes the replayed context; it does not retrain the model.</p>
+      </div>
+    </section>
+    <section id="results-view" class="results-view" hidden aria-labelledby="results-title">
+      <p class="eyebrow">BEHIND THE RECOMMENDATIONS</p><h1 id="results-title">Good questions.<br><em>Measured answers.</em></h1>
+      <p class="results-intro">How well does each approach rank known clicks? These offline comparisons describe a historical dataset, not a live engagement experiment.</p>
+      <div class="results-toolbar"><label for="evaluation-split">Evaluation</label><select id="evaluation-split"></select><span id="evaluation-count" class="caption"></span></div>
+      <div id="model-cards" class="model-cards"></div>
+      <div class="comparison-table"><table><caption>Same split, different stages of the recommendation system</caption><thead><tr><th scope="col">Approach</th><th scope="col">Logged AUC</th><th scope="col">Logged nDCG@10</th><th scope="col">Catalog recall@100</th></tr></thead><tbody id="comparison-rows"></tbody></table></div>
+      <div class="result-notes"><section><h2>Ranking is only half the story</h2><p>Logged ranking compares items already shown by the original news site. Catalog retrieval must first find clicked stories among all previously available articles. Its recall is much lower.</p></section><section><h2>Keep the limits in view</h2><p>Unknown exposure probabilities prevent causal claims. Session feedback timing is simulated. First observation is a freshness proxy. One training seed does not establish statistical significance.</p></section></div>
+      <p id="comparison-note" class="footnote"></p>
+    </section>
+  </main>
+  <footer><span>fieldnotes</span><p>Explore the recommendation. Question the result.</p><span>Local research application</span></footer>
+  <dialog id="story-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-category" class="category"></span><button id="close-dialog" class="text-button" aria-label="Close story summary">Close</button></div><h2 id="dialog-title"></h2><p id="dialog-summary"></p><div id="dialog-feedback" class="feedback-row"></div><section class="explanation"><h3>How this story was ranked</h3><dl id="dialog-details"></dl><p class="caption">Content similarities and scores describe model inputs and output. They are not a causal explanation or click probability.</p></section></dialog>
+</body>
+</html>

@@ -75,8 +75,9 @@ The catalog is the observed research sample, not a complete publisher inventory.
 
 ## Evaluation and verification
 
-Both arms use all 61,894 development impressions from November 13–14 in the
-training archive. The separate official validation archive remains sealed.
+Both arms use all 61,894 development impressions from November 13-14 in the
+training archive. The separate official validation archive was sealed at this stage; see the
+subsequent [final evaluation](final-evaluation.md).
 Logged ranking evaluates all displayed candidates. Catalog metrics use a much
 larger previously observed pool. Recall@20/100 and catalog nDCG@100 retain
 unavailable positive articles in the denominator. Per-impression means and their
@@ -115,4 +116,4 @@ do not establish statistical significance or cross-platform bitwise retraining.
 Timing covers offline batches and local files, not recommendation-service latency.
 Offline improvement does not establish live engagement lift. Session ranking
 and freshness/diversity experiments are documented in
-[session ranking](session-ranking.md). Serving and a browsing demo remain unfinished.
+[session ranking](session-ranking.md). See the [service](service.md) and [browsing demo](demo.md) for integration.

@@ -1,0 +1,2 @@
+mlflow==3.5.0
+SQLAlchemy==2.0.44

@@ -4,8 +4,8 @@ The local FastAPI service uses the frozen content encoder and session ranker,
 an exact FAISS catalog, PostgreSQL receipts and feedback, and an optional Redis
 cache. It supports article insertion without retraining. Scores remain
 uncalibrated ranking scores; the earlier offline results do not establish live
-engagement improvements. The browsing application and final holdout evaluation
-remain unfinished.
+engagement improvements. The [browsing application](demo.md) and [final evaluation](final-evaluation.md)
+reuse the same frozen models.
 
 ## Setup
 

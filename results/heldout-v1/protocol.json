@@ -1,0 +1,109 @@
+{
+  "frozen_at_utc": "2026-11-19T01:30:08.511204+00:00",
+  "parent_sha": "8b53cb49ed986ed9474f5c71bb1f448247889184",
+  "final_archive_content_opened": false,
+  "fixture_verification": {
+    "tests": 14,
+    "xml_sha256": "c3c8f111d1257509dea947235d393e2b85ce580dbdd7601e5ef879ae65587e5a"
+  },
+  "model_sha256": {
+    "content": "dd821f62657c351aee7025200add88015bcaca4379f1bcaa83fc6df39ca71a90",
+    "long_only": "7236e6b7fd41f496fbff434e5799dc734f53dfc8519994cd6a292433e91d95c4",
+    "session": "5b2ad61fe307237c7de9b6f1077cfecacff530f7d212346b91520b2b8478718d"
+  },
+  "source_sha256": {
+    "src/newsrec/api.py": "73abcea7b2bcb0626a2bbb29148c277c8cf47904c9ec1cdf1e93d8ab7172e671",
+    "src/newsrec/baseline.py": "dcde42dfaff9b3363d8ad32078a29bfb9b1206d961575a7bca61b0baaef2e268",
+    "src/newsrec/cli.py": "e347b355fa7cbbb491625d202dec77910c267e7bf13e736032eeba88d309ee8d",
+    "src/newsrec/data.py": "10aa3728c9be4372adba78ca71282823c37c2d4875faaaafe244d2f6d8464e9a",
+    "src/newsrec/demo.py": "8575cde8d8e8776415e50529c280227510578c4df35856d6c696244ba9b6eb01",
+    "src/newsrec/evaluate_retrieval.py": "2c84e6cf0d303b89a7d67c5b70f53549b7b22bb8de84f59c616210b72f876844",
+    "src/newsrec/evaluate_session.py": "df5da9b83c3fb6d25f86d12a88943330f4f99331085375e03a8a9f7a013513b7",
+    "src/newsrec/heldout.py": "bb8f842f14fcaf31ab4ca279bd1d5305fdf177aea9b8aa1f11494550f6cf43a3",
+    "src/newsrec/heldout_data.py": "dabcddade07f843c5896570eb2f6a717809d8f6a494c9a11f7d933564a3b4658",
+    "src/newsrec/metrics.py": "6ff6d91598809f3fcd72f6e48fe73e84f3bb6d12eaa2ddaf5c5081d1463796de",
+    "src/newsrec/rank_policy.py": "82ed480ed0a53f0ddb379b3eb15f2f7a93db8edf6ee29e23495c2c06e7c4ffb2",
+    "src/newsrec/retrieval_data.py": "fbea4a01318eed206ade7a4099801871758005d9195b50989bfab9ba4d0d296b",
+    "src/newsrec/retrieval_index.py": "336d05ca1a3c9196d921b4d6d279552237921c7a013d8ae4c4cf67c19d50b7f7",
+    "src/newsrec/retrieval_model.py": "032d67e08af4313e841df8469a4dc14ab1f066f8b1d5e83f37cb4b7cb25e6e2d",
+    "src/newsrec/service_engine.py": "a4067e7e3f6162bb5c5a70d9f5fe81a1c11c16fc6f23f95f5816eedc873200a5",
+    "src/newsrec/service_setup.py": "4710ef5ddfd1f58550853b6c1b71b265a2aebe47aba5b1ab119a4f9fe48c1161",
+    "src/newsrec/service_store.py": "9384b8c202d77fa805332556a065b19e08606228e3368dc15b8a3f93af1fe072",
+    "src/newsrec/session_data.py": "25998ab503f525ab15a9f16f715a0a52f96227a312c646afa68d31e2ca51178e",
+    "src/newsrec/session_model.py": "bb535f84e4a63f1d66169609cef094f93aa72ccd14a1f858356b8cc03e266311",
+    "src/newsrec/train_retrieval.py": "2b5dc241ea3c6250cae80d859d8e2f2424ad6b58b045e44b2eb8c29bc5af2889",
+    "src/newsrec/train_session.py": "e451b0af823bca5412cdaa71dc7a041763284e00d0cccd8dc25b780bade041bb",
+    "src/newsrec/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "scripts/audit_heldout.py": "a80a2aa583268ca656a99878b48acd7c70d9efa7d1c900ad369cb65e85df617c",
+    "scripts/audit_session.py": "78027b6b888dea853fe8079dd004f3c72da940b3bfa7cb68609f09a9cde30fa6",
+    "scripts/audit_baseline.py": "192303fdede73f2115f39b7deb40150bab7b3c34a482f10c30255fa7c10364c1",
+    "tests/test_heldout.py": "1cc4f58dba3cdbb0e58a2990450466f8ec801baed9ebb1a3888e779df2a9c61c"
+  },
+  "configuration": {
+    "fit_cutoff": "2019-11-13T00:00:00",
+    "model_epochs": 3,
+    "history_length": 20,
+    "dimension": 64,
+    "session_gap_seconds": 1800,
+    "feedback_delay_seconds": 300,
+    "session_groups": 10,
+    "batch_size": 128,
+    "cpu_threads": 4,
+    "retrieval_k": 100,
+    "ranking_k": 10,
+    "audit_queries": 128,
+    "model_reload_queries": 256
+  },
+  "chronology": "Official dev archive is reserved final data. Require every impression strictly later than the entire training archive, else halt without exclusions. Training/development labels never refit frozen models or popularity counts.",
+  "metadata": "Training metadata wins shared IDs; record disagreements. New observed IDs use fixed title/category/subcategory SHA256 token hashing and frozen encoder. Existing vectors retained bitwise. Missing metadata, malformed or duplicate IDs halt without excluding events. Final impression namespace final: prevents archive ID collisions.",
+  "availability": "Union of training and final history/exposure observations, first_seen strictly before query; current and equal-time new IDs excluded from retrieval. Earlier label-free exposures may add later catalog candidates. All logged positives remain in denominators, including unavailable/unretrieved items.",
+  "feedback": "Pre-impression provided last20history and earlier same-user clicked groups. Seed session state from original training archive. Earlier final labels may update only later contexts, strictly after5minutes; gap>30minutes resets. Equal-time outcomes enter once as unordered centroid after all queries at that time. No click-order inference. This is a causal label-assisted replay, not globally label-free prediction.",
+  "selection": "All learned weights, fixed epochs, counts, hashing, thresholds, policies and exclusions frozen before opening archive. No final-score tuning, checkpoint selection or holdout reruns.",
+  "logged_arms": [
+    "popularity",
+    "content",
+    "long_only",
+    "session",
+    "session_fresh",
+    "session_balanced"
+  ],
+  "catalog_arms": "Popularity100; frozen content100; session relevance/fresh/balanced rank the deduplicated union of those two pools. No oracle injection. All original candidate pools and temporal conditions retained.",
+  "controls": "Relevance rank scale; freshness exp(-age_hours/24),24hour decay scale (~16.64hour half-life). Freshweight.15;balanced freshness.10/redundancy.15;redundancy halfmaxcontentcosine/halfcategoryshare. Top10 controls then remaining model order.",
+  "metrics": "All impressions, macro logged AUC,mean_clicked_rr,first_hit_rr,nDCG5/10,recall5/10; catalogrecall10/100,nDCG10,poolrecall;slatecategorycount,age,cosinediversity;daily,cold/warmusers,emptyhistory,coldpositivearticle,unseencontentpositive,with/withoutsession;fitexposurebins0/1-99/100-999/1000+;articlemacrorecall10;catalogcoverage. Zero-positive andone-class undefinedmetrics omitted withcounts,neverentireimpressions.",
+  "freeze_order": "Prepare validated causal contexts; write every prediction without current label access; freeze predictionhashes; then aggregate current labels and independently audit all metrics. Labels necessarily parsed earlier for delayed contexts; timestamps report that fact.",
+  "audit": "Independent raw TSV parsing, all contexts/history/labels/fitcounts/availability;fullpredictiondigest,allmetricgroups,exposure/coverage;128hash-selected exhaustivefloat64 retrievalqueries and512policydecisions;256reloadqueries perlearnedarm. Feature1e-6,ranking1e-10,age1e-8,cosinediversity1e-7,policy1e-6,FAISSscore1e-5/boundary1e-6.",
+  "limitations": [
+    "One training seed; no statistical significance or live engagement claim.",
+    "No exposure propensities/randomization; no IPS or causal correction.",
+    "No documented timestamp timezone, publication times or text version history.",
+    "Missing catalog relevance is unknown; catalog recall uses only known logged positives, no full-catalog AUC.",
+    "No final cases or text enter the browsing demo. Public reports contain aggregates/hashes only."
+  ],
+  "environment": {
+    "TF_USE_LEGACY_KERAS": "1",
+    "TF_NUM_INTRAOP_THREADS": "4",
+    "TF_NUM_INTEROP_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "TF_CPP_MIN_LOG_LEVEL": "2",
+    "TF_ENABLE_ONEDNN_OPTS": "0"
+  },
+  "helper_sha256": "c3849a5066eb198d3e6d05e3cef1ad1383c0c57b337b1be2bee112668a096a58",
+  "original_private_protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+  "immutable_inputs_count": 51,
+  "original_input_hashes_note": "Exact dataset, model, prepared-array and earlier-report hashes were verified before each stage. Public data/model/prepared-manifest hashes are in report.json; individual private paths and arrays are not redistributed.",
+  "pre_outcome_archive_wrapper_correction": {
+    "scope": "Initial guard required root TSV members; the official archive wraps them in MINDsmall_dev/. The failed guard read no TSV content/outcomes. Accept exactly one root/wrapped TSV member and reject ambiguity; no model, feature, metric or policy changed.",
+    "source_changes": {
+      "src/newsrec/heldout_data.py": {
+        "before_sha256": "ca47f94de097118ddea9076b01c715aa9438e4583b7ee1394a33b96cc75dc684",
+        "after_sha256": "dabcddade07f843c5896570eb2f6a717809d8f6a494c9a11f7d933564a3b4658"
+      },
+      "tests/test_heldout.py": {
+        "before_sha256": "ba84b6939ec94f9aad85e5c480673b2da4b06c7e32631f9feacff115b4f10cd3",
+        "after_sha256": "1cc4f58dba3cdbb0e58a2990450466f8ec801baed9ebb1a3888e779df2a9c61c"
+      }
+    },
+    "record_sha256": "185dad722b10c33f280d3de81a98dddf0e85a115df045217212b673f84f7e25f",
+    "regression": "Authored wrapper and ambiguous-member checks passed before successful preparation."
+  }
+}

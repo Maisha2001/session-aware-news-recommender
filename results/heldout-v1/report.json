@@ -1,0 +1,3721 @@
+{
+  "format_version": 1,
+  "evaluation_split": "official MIND-small dev archive, reserved as final chronological holdout",
+  "counts": {
+    "impressions": 73152,
+    "candidate_entries": 2740998,
+    "positive_events": 111383,
+    "zero_positive_impressions": 0,
+    "single_class_impressions": 0,
+    "unavailable_positive_events": 132,
+    "all_impressions": 73152,
+    "without_session_impressions": 69149,
+    "cold_user_impressions": 65667,
+    "empty_long_history_impressions": 2214,
+    "cold_positive_article_impressions": 71114,
+    "unseen_content_positive_impressions": 69148,
+    "warm_user_impressions": 7485,
+    "with_session_impressions": 4003
+  },
+  "data": {
+    "archive_content_opened_at_utc": "2026-11-19T01:31:47.872194+00:00",
+    "labels_first_parsed_at_utc": "2026-11-19T01:31:51.793737+00:00",
+    "labels_access": "Labels are parsed for strictly delayed causal replay. Current, equal-time and future outcomes never enter a query; metrics wait until all predictions are frozen.",
+    "metadata_policy": "Existing training-archive metadata wins on shared IDs, including any changed text. New metadata is encoded with the frozen hashing/encoder. Availability depends only on observations.",
+    "metadata_counts": {
+      "shared_metadata_ids": 28460,
+      "changed_shared_metadata_ids": 0,
+      "new_metadata_ids": 13956
+    },
+    "train_last_time": 1573775953,
+    "input_sha256": {
+      "news.tsv": "e5d144667558c449d16084fe6bfa01940c2f5d5785ea9f9110292bc3b94eb822",
+      "behaviors.tsv": "b6c460e33b1a8693252ded6e626da7d3ccf78920eea2ec11889020bb7d8443ef"
+    },
+    "archive_sha256": "b315cde1c9b9d45008b5a7c4b2e1f87647659f09f74892ae3899c0005d5d6155",
+    "database_sha256": "24328878a2a3638b050a2e34ef4df94c7abc90e6b2a8484a4592e08fa2aa0169",
+    "date_range": [
+      "2019-11-15T00:00:01",
+      "2019-11-15T23:58:03"
+    ],
+    "timezone": "Naive dataset timestamps; no documented geographic timezone.",
+    "format_version": 1,
+    "counts": {
+      "impressions": 73152,
+      "candidate_entries": 2740998,
+      "positive_events": 111383,
+      "catalog_articles": 65238,
+      "new_observed_articles": 13956
+    },
+    "original_prepared_manifest_sha256": "d70b39ca7e2eeaca0b548bf82b4e4abd85ddbfdb6901c0ae3606a65476f73f3d",
+    "content_weights_sha256": "dd821f62657c351aee7025200add88015bcaca4379f1bcaa83fc6df39ca71a90",
+    "prepared_at_utc": "2026-11-19T01:32:28.588586+00:00"
+  },
+  "logged_ranking": {
+    "popularity": {
+      "all": {
+        "auc": {
+          "mean": 0.4949736816237422,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 6.061734470691164,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.2437745728853748,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6086466747975372,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21862541138525832,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.43624978695481,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.2807898952570974,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.22122104514598465,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.5061876517744256,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.3328982529694393,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "auc": {
+          "mean": 0.49822213541151844,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 6.158631026729952,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.23837729435345584,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6132450471537209,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21470551910601854,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 42.11237007016561,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.28131714663772545,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.21286694396241307,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.527079789364326,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.325428349372891,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "auc": {
+          "mean": 0.494785630306847,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 6.0561251789613735,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.24408701856013043,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6083804773898979,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2188523319306528,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.57077798702025,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.2807593729462054,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.22170465976134818,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.5049782166882718,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.33333068184183096,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.4950386245370817,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 6.063441302328415,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.24412726217557462,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6086723969278197,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21895005399135714,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.416463865156985,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.2811077715483883,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.22172837491827113,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.5063838852425754,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.33357049047536635,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.4944039279444153,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 6.046760187040748,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.24068037814668472,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6084210107858843,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21577727430906818,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.60983457342381,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.27800112005087463,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.21677016683512149,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.5044660668508372,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.3270006149865868,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "auc": {
+          "mean": 0.4966114660002132,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 6.004516711833785,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.2529518414833255,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6091757329277123,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.22724795097302047,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.141884313278595,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.2928303734036725,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.2304835879613885,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.5251052107081918,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.34240403779699174,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.48452405448233893,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 6.045757516100909,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.2355473219067806,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6090916378118151,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2098067022881334,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 43.96475081410507,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.27228266584400035,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.2118412712499095,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.4988313004837684,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.32312446214838786,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "auc": {
+          "mean": 0.48425986410494654,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 6.103517093769885,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.22916605844465396,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6074567954403497,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.20280959262080803,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 43.495952245373495,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.26467081661828684,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.20389284839328514,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.4896341533513047,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.31321956288762975,
+          "impressions": 69148
+        }
+      }
+    },
+    "content": {
+      "all": {
+        "auc": {
+          "mean": 0.5956893236822256,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.285310039370079,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.3197710219384206,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.562352377046413,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27936703552828596,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.953862694933605,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36048674217891385,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2978280664593862,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.604980733046597,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4245949188234751,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "auc": {
+          "mean": 0.5949969343705555,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 5.449163127654259,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.31798564071637275,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5653323841993965,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.28129647124946955,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 30.473080870398753,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.36475216899499413,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.2976320356974722,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.6261362509863633,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.4308015020480669,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "auc": {
+          "mean": 0.5957294057429126,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 5.275824668469537,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.3198743767379507,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5621798659669647,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27925534148800674,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.923805422140415,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.3602398188171366,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.2978394145792531,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.6037560510076246,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.42423562291683875,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.5952670864298893,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 5.289719341526185,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.31926236232932126,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5622452935247315,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2790679341048477,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.990399445433262,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.36006308040093954,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.29743398047611064,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.6045831596031107,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.4241830521321148,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.5993936728671022,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 5.246626586506346,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.3242335671023838,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5632918364478343,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2819910960725644,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.63332043774485,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.36420358893595833,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.30128544044270494,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.6084687030283481,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.42820828555983104,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "auc": {
+          "mean": 0.5101668170793671,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 5.630081300813008,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.25688339629275064,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6083972735763559,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23150749349082922,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 34.08833536968733,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.29960060200589356,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.23956528348395775,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.534892136619779,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.3608003183206436,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.593537331903166,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 5.276823129060382,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.32221799336442936,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5631358331923019,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2807126959967133,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.694599130423857,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.3627367759645681,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.3000442704583418,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.6075369676457242,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.4274341316071127,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "auc": {
+          "mean": 0.5966917573131815,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 5.319372939202869,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.3177290743202837,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5608458945800289,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2751074758246243,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.916882214425556,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.3572407260955507,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.2935389047667433,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.6014931825045503,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.4186534800009867,
+          "impressions": 69148
+        }
+      }
+    },
+    "long_only": {
+      "all": {
+        "auc": {
+          "mean": 0.5949164109790305,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.439085739282589,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.31898848748704456,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5334855720470801,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2781997830052443,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.939801964460884,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.35980428564431244,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.29703258011390987,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6053085677464827,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4244967017444683,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "auc": {
+          "mean": 0.5922898498387159,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 5.592055958031477,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.312569111117581,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5373077042383413,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2775161455048617,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 27.547010506505103,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.36168296840420433,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.2943446824993681,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.6252718199445652,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.4292760588288939,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "auc": {
+          "mean": 0.5950684612508326,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 5.430230372095041,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.31936010187926533,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5332643107828453,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2782393584280943,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.90465097465903,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.3596955296668343,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.29718818112262596,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.6041529053573091,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.42422002722410096,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.5945043879649556,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 5.442231257709352,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.318696953779071,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5336433547700368,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2780239246245378,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.982130138424775,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.3596862381939648,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.2966844438680622,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.6056144210773331,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.4240420306252621,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.5985311491574805,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 5.411489645958584,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.3215461553565207,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5321013211362948,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27974261430612624,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.56845070197718,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.3608399331959762,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.3000868303286665,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.6026252717308517,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.4284855979882883,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "auc": {
+          "mean": 0.5071527623104873,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 6.043360433604336,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.2657978710851355,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6116299773645367,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23570603839739146,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.80696241475402,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.30239701955951626,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.2420110432289351,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.5317766808620467,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.3567992644212157,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.5931637792515541,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 5.428424782743201,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.32209127429387,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.534566837791265,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2801721661740391,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.732997026368825,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.36263272958853876,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.2998661300684444,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.6082023091719967,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.4277947997957932,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "auc": {
+          "mean": 0.5982194691678263,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 5.473506102851854,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.3190739738550206,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5317723949843571,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.275999697467588,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 25.921666876792465,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.35848418275172594,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.2948508206880036,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.6030162214543303,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.4203066763947579,
+          "impressions": 69148
+        }
+      }
+    },
+    "session": {
+      "all": {
+        "auc": {
+          "mean": 0.5988707619524193,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.4162018810148735,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.3209792158174032,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5371075494046229,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27980834208384325,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.512129001923185,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36225322444357205,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2991574754615441,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6089672001883321,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4274930321963025,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "auc": {
+          "mean": 0.592165545295293,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 5.5071196602548085,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.3152375721220693,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5509024670475223,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27884096428440175,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 27.381295827236645,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.3614574727232396,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.2945812062300559,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.620422778154479,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.42602789971013766,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "auc": {
+          "mean": 0.5992589234916826,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 5.410938697595048,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.3213115966141341,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5363089687263256,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2798643430864862,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.461813382004795,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.3622992901008876,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.29942239333070114,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.608304042679207,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.42757784796142084,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "auc": {
+          "mean": 0.598875666222357,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 5.419266907274582,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.320859856190718,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5372382801334755,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2798261808943959,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.551675850967584,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.3622071167377709,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.2990323289831761,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.6090991790186671,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.4273102851886877,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "auc": {
+          "mean": 0.598827736074827,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 5.389311957247829,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.32202637528393796,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5359606295956161,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2796518395893101,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.165178709844657,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.36265773409206836,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.30025540382445104,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.6078093306022855,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.42909629842864777,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "auc": {
+          "mean": 0.523624571445453,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 6.124661246612466,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.2655298909074764,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.632080278182565,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2351519370738527,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 22.645901338772905,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.30429764293887546,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.2466797254216047,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.5392948552501401,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.37360143244289595,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "auc": {
+          "mean": 0.5972679045433922,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 5.405222600331862,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.32440809387913094,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5381680667656227,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2821001493506739,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.306753887027515,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.36539915729454703,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.3022650831648215,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.612116957207351,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.43094379387871024,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "auc": {
+          "mean": 0.6020704356473024,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 5.449991322959449,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.321357553219394,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5354403137251164,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27788039203551296,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 25.488283413464103,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.3613432382870068,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.29730069696338585,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.6073530971468474,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.4237693588326093,
+          "impressions": 69148
+        }
+      }
+    },
+    "session_fresh": {
+      "all": {
+        "categories@10": {
+          "mean": 5.408806321084865,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.31933457061107423,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5431415970939908,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27851459814887064,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.861342867496905,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36188255227140526,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2979426553729382,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6108807171962222,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.42721187555263074,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "categories@10": {
+          "mean": 5.504371721209093,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.3137340603565497,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5560493148242693,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2772295114150696,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 25.02421126565791,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.36111963792905255,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.29094205288400055,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.6241227809301749,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.42007839358576265,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "categories@10": {
+          "mean": 5.403274089285456,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.3196587812655962,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5423943759617508,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27858899115811103,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.794025014775475,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.3619267169898204,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.2983479166458982,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.6101141409459941,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.4276248291501291,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "categories@10": {
+          "mean": 5.412505520276547,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.31926619177241217,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.543295298212284,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27860497371388626,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.894201676978703,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.3618635736746098,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.29790825686495187,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.6109291298787431,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.42713760131900647,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "categories@10": {
+          "mean": 5.376352705410822,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.3199344681661745,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5417931546980624,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2777217200958495,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.57306772491192,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.3620490542778163,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.2982444385159339,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.6104559856500584,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.42786349426999176,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "categories@10": {
+          "mean": 6.1228545618789525,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.265156360994651,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6403200284736503,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23424344185270407,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 21.312616936484417,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.30390267693150524,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.2450260341921489,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.539839549189143,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.370891405342625,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "categories@10": {
+          "mean": 5.39717917709593,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.32443925913667554,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5440798026590674,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.28247542248661794,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.71832156474696,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.36701103759269493,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.30301968518148625,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.6163047532741518,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.4328880828026274,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "categories@10": {
+          "mean": 5.441646902296523,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.3216372446976832,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5414584696227224,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27850285027614774,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 22.864339919878773,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.36336456660767014,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.2983368453628172,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.612257711348673,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.4260557517271077,
+          "impressions": 69148
+        }
+      }
+    },
+    "session_balanced": {
+      "all": {
+        "categories@10": {
+          "mean": 5.535515091863517,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.318162396216172,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5469985576494388,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27761338895501003,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.698582540445713,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36039732697756605,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2961991149162129,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6091719480866977,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4248214916011396,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "categories@10": {
+          "mean": 5.603547339495378,
+          "impressions": 4003
+        },
+        "first_hit_rr": {
+          "mean": 0.3123555484390674,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5591995069298561,
+          "impressions": 4003
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27684843076628823,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 25.759674022756734,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.35999087072390273,
+          "impressions": 4003
+        },
+        "ndcg@5": {
+          "mean": 0.2903237445117,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.6222551340462903,
+          "impressions": 4003
+        },
+        "recall@5": {
+          "mean": 0.41947051616049835,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "categories@10": {
+          "mean": 5.531576740083009,
+          "impressions": 69149
+        },
+        "first_hit_rr": {
+          "mean": 0.3184985516436174,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.546292250978792,
+          "impressions": 69149
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27765767199062913,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.637156500970203,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.3604208565207928,
+          "impressions": 69149
+        },
+        "ndcg@5": {
+          "mean": 0.29653923708327157,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.6084145691890096,
+          "impressions": 69149
+        },
+        "recall@5": {
+          "mean": 0.42513125681378106,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "categories@10": {
+          "mean": 5.5390683296023875,
+          "impressions": 65667
+        },
+        "first_hit_rr": {
+          "mean": 0.3181180967379364,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5471700189882821,
+          "impressions": 65667
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27770616491441186,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.727445332679153,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.3604398136231621,
+          "impressions": 65667
+        },
+        "ndcg@5": {
+          "mean": 0.29617978492072355,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.6093680990530129,
+          "impressions": 65667
+        },
+        "recall@5": {
+          "mean": 0.4247548925752932,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "categories@10": {
+          "mean": 5.504342017368069,
+          "impressions": 7485
+        },
+        "first_hit_rr": {
+          "mean": 0.31855104201961554,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5454943022404163,
+          "impressions": 7485
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2767994518908844,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.445365041767808,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.3600245854205522,
+          "impressions": 7485
+        },
+        "ndcg@5": {
+          "mean": 0.2963686997946561,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.607451086963797,
+          "impressions": 7485
+        },
+        "recall@5": {
+          "mean": 0.42540577459784346,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "categories@10": {
+          "mean": 6.224480578139115,
+          "impressions": 2214
+        },
+        "first_hit_rr": {
+          "mean": 0.26386676175875734,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.65318692853977,
+          "impressions": 2214
+        },
+        "mean_clicked_rr": {
+          "mean": 0.23366948985055927,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 21.671002450385853,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.3033828831974174,
+          "impressions": 2214
+        },
+        "ndcg@5": {
+          "mean": 0.24428755004149258,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.5406299737600555,
+          "impressions": 2214
+        },
+        "recall@5": {
+          "mean": 0.37067686153052015,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "categories@10": {
+          "mean": 5.5225272098321,
+          "impressions": 71114
+        },
+        "first_hit_rr": {
+          "mean": 0.32289945823887983,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5478856446226612,
+          "impressions": 71114
+        },
+        "mean_clicked_rr": {
+          "mean": 0.28121629797480074,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.54166322547624,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.36500987824664755,
+          "impressions": 71114
+        },
+        "ndcg@5": {
+          "mean": 0.3007529226866937,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.6138333710160887,
+          "impressions": 71114
+        },
+        "recall@5": {
+          "mean": 0.42973312925171653,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "categories@10": {
+          "mean": 5.569474171342628,
+          "impressions": 69148
+        },
+        "first_hit_rr": {
+          "mean": 0.31997816338103663,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5453368942819259,
+          "impressions": 69148
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2771350474871708,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.698240559328365,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.36118120905644846,
+          "impressions": 69148
+        },
+        "ndcg@5": {
+          "mean": 0.29592822683419273,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.6094870858608316,
+          "impressions": 69148
+        },
+        "recall@5": {
+          "mean": 0.422724326858428,
+          "impressions": 69148
+        }
+      }
+    }
+  },
+  "catalog_ranking": {
+    "popularity": {
+      "all": {
+        "candidate_pool_recall": {
+          "mean": 0.002668394407854711,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190678205,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.09818589375487,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 73152
+        },
+        "recall@100": {
+          "mean": 0.002668394407854711,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "candidate_pool_recall": {
+          "mean": 0.0023315846448496956,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190698455,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.24735287423334,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 4003
+        },
+        "recall@100": {
+          "mean": 0.0023315846448496956,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "candidate_pool_recall": {
+          "mean": 0.0026878921515864945,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190678954,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.0895506940725,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 69149
+        },
+        "recall@100": {
+          "mean": 0.0026878921515864945,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "candidate_pool_recall": {
+          "mean": 0.0026493274814349344,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190679684,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.09027852312062,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 65667
+        },
+        "recall@100": {
+          "mean": 0.0026493274814349344,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "candidate_pool_recall": {
+          "mean": 0.002835671342685371,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190697287,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.16755841312221,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 7485
+        },
+        "recall@100": {
+          "mean": 0.002835671342685371,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "candidate_pool_recall": {
+          "mean": 0.0007339656729900631,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190697748,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.18622709023391,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@100": {
+          "mean": 0.0007339656729900631,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "candidate_pool_recall": {
+          "mean": 0.0008183815806084288,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190678577,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.08901286197704,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 71114
+        },
+        "recall@100": {
+          "mean": 0.0008183815806084288,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "candidate_pool_recall": {
+          "mean": 0.000834418749976685,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 5.0,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.15884453190678954,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 110.03587188911982,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 69148
+        },
+        "recall@100": {
+          "mean": 0.000834418749976685,
+          "impressions": 69148
+        }
+      }
+    },
+    "content": {
+      "all": {
+        "candidate_pool_recall": {
+          "mean": 0.011982067840417603,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 2.7500410104986877,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.39566092185526336,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.6335264377221,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.0009889444760954247,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.0018671666791335421,
+          "impressions": 73152
+        },
+        "recall@100": {
+          "mean": 0.011982067840417603,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "candidate_pool_recall": {
+          "mean": 0.00973674506025243,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 2.727454409193105,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.39554584183601876,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 100.18886725927771,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.0006071926142269268,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.0010617037222083437,
+          "impressions": 4003
+        },
+        "recall@100": {
+          "mean": 0.00973674506025243,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "candidate_pool_recall": {
+          "mean": 0.012112048419876464,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 2.751348537216735,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.39566758377831596,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.71715701359845,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.0010110438947863614,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.0019137945149167292,
+          "impressions": 69149
+        },
+        "recall@100": {
+          "mean": 0.012112048419876464,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "candidate_pool_recall": {
+          "mean": 0.011827803213887569,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 2.753468256506312,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3958972096201509,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.67507633590691,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.0009702496458805057,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.0018428126290522923,
+          "impressions": 65667
+        },
+        "recall@100": {
+          "mean": 0.011827803213887569,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "candidate_pool_recall": {
+          "mean": 0.013335453976736541,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 2.7199732798931198,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.39358793472675996,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.26900310250134,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.0011529569564859502,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.002080828323313293,
+          "impressions": 7485
+        },
+        "recall@100": {
+          "mean": 0.013335453976736541,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "candidate_pool_recall": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 1.2746160794941284,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3026973387023252,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 65.36067854812808,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@100": {
+          "mean": 0.0,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "candidate_pool_recall": {
+          "mean": 0.010998943855343456,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 2.7486852096633574,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3957074260613153,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.5198092831387,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.0007088785958447945,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.0013406217750650633,
+          "impressions": 71114
+        },
+        "recall@100": {
+          "mean": 0.010998943855343456,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "candidate_pool_recall": {
+          "mean": 0.010950119935918531,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 2.745025163417597,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3958178159355988,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 101.51745179783445,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.0007096024663471945,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.0013353528216575594,
+          "impressions": 69148
+        },
+        "recall@100": {
+          "mean": 0.010950119935918531,
+          "impressions": 69148
+        }
+      }
+    },
+    "session": {
+      "all": {
+        "candidate_pool_recall": {
+          "mean": 0.014004091221733983,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 3.1363872484689415,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3848413444431402,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 56.519156959329536,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.0021575402172069385,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.0039425681598827915,
+          "impressions": 73152
+        },
+        "recall@100": {
+          "mean": 0.012630700953986754,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "candidate_pool_recall": {
+          "mean": 0.011943423384842321,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 2.9627779165625783,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.39817943109018455,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 58.843629833180565,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.0011305324357032908,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.002144225164459988,
+          "impressions": 4003
+        },
+        "recall@100": {
+          "mean": 0.010382094381594755,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "candidate_pool_recall": {
+          "mean": 0.01412338222161941,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 3.1464374032885507,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.38406920947592116,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 56.38459442170764,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.0022169931687949463,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.004046673309786297,
+          "impressions": 69149
+        },
+        "recall@100": {
+          "mean": 0.012760871630486554,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "candidate_pool_recall": {
+          "mean": 0.013853529799895594,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 3.143968812341054,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3852696058461912,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 56.647357887353856,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.0021143017943416414,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.003891211816425394,
+          "impressions": 65667
+        },
+        "recall@100": {
+          "mean": 0.012525877987982268,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "candidate_pool_recall": {
+          "mean": 0.015324988601541705,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 3.069873079492318,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.38108414450265987,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 55.39443146292595,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.002536877226464861,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.004393124874086798,
+          "impressions": 7485
+        },
+        "recall@100": {
+          "mean": 0.013550328169566646,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "candidate_pool_recall": {
+          "mean": 0.0007339656729900631,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 6.8378500451671185,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6170023705687592,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 87.10911807437513,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@100": {
+          "mean": 7.527853056308341e-05,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "candidate_pool_recall": {
+          "mean": 0.011644598078000818,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 3.132589926034255,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3847308997526215,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 56.443430607897035,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.0018983388562490437,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.003408706387374441,
+          "impressions": 71114
+        },
+        "recall@100": {
+          "mean": 0.011026347875983698,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "candidate_pool_recall": {
+          "mean": 0.011606900383510007,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 3.126713715508764,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.3846972164543849,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 56.49236160280985,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.001952311989114573,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.003505621941802308,
+          "impressions": 69148
+        },
+        "recall@100": {
+          "mean": 0.010992764835609195,
+          "impressions": 69148
+        }
+      }
+    },
+    "session_fresh": {
+      "all": {
+        "candidate_pool_recall": {
+          "mean": 0.014004091221733983,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 3.1652859798775155,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4155661725978071,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.760482703062603,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.002522584635780687,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.0051647832549243265,
+          "impressions": 73152
+        },
+        "recall@100": {
+          "mean": 0.012630700953986754,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "candidate_pool_recall": {
+          "mean": 0.011943423384842321,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 2.9937546839870097,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4212077770760524,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.037840557082248,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.0017210745818000734,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.0030393871263219253,
+          "impressions": 4003
+        },
+        "recall@100": {
+          "mean": 0.010382094381594755,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "candidate_pool_recall": {
+          "mean": 0.01412338222161941,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 3.1752158382623032,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4152395830198452,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.802316084750863,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.002568983640048057,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.005287821342283443,
+          "impressions": 69149
+        },
+        "recall@100": {
+          "mean": 0.012760871630486554,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "candidate_pool_recall": {
+          "mean": 0.013853529799895594,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 3.17177577778793,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4160460026430015,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.86306806395214,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.002449541744106498,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.005068223282851633,
+          "impressions": 65667
+        },
+        "recall@100": {
+          "mean": 0.012525877987982268,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "candidate_pool_recall": {
+          "mean": 0.015324988601541705,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 3.1083500334001335,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4113565534157121,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 27.860486324500737,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.0031634006100718062,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.006011918015926034,
+          "impressions": 7485
+        },
+        "recall@100": {
+          "mean": 0.013550328169566646,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "candidate_pool_recall": {
+          "mean": 0.0007339656729900631,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 7.263324299909666,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.7075541394482953,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 72.7238164583961,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@100": {
+          "mean": 7.527853056308341e-05,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "candidate_pool_recall": {
+          "mean": 0.011644598078000818,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 3.161248136794443,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.41546408007737634,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.671971509360425,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.002459123226556509,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.0049190626974185735,
+          "impressions": 71114
+        },
+        "recall@100": {
+          "mean": 0.011026347875983698,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "candidate_pool_recall": {
+          "mean": 0.011606900383510007,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 3.155347949326083,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4153516362525147,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 28.761975445581996,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.002529040451399022,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.005058920354373581,
+          "impressions": 69148
+        },
+        "recall@100": {
+          "mean": 0.010992764835609195,
+          "impressions": 69148
+        }
+      }
+    },
+    "session_balanced": {
+      "all": {
+        "candidate_pool_recall": {
+          "mean": 0.014004091221733983,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 3.678423009623797,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4239263393275607,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.19209186161823,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.002283658234790258,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.004575648747031619,
+          "impressions": 73152
+        },
+        "recall@100": {
+          "mean": 0.012630700953986754,
+          "impressions": 73152
+        }
+      },
+      "with_session": {
+        "candidate_pool_recall": {
+          "mean": 0.011943423384842321,
+          "impressions": 4003
+        },
+        "categories@10": {
+          "mean": 3.516112915313515,
+          "impressions": 4003
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.43358957125448805,
+          "impressions": 4003
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.53763471840562,
+          "impressions": 4003
+        },
+        "ndcg@10": {
+          "mean": 0.0015864654528063963,
+          "impressions": 4003
+        },
+        "recall@10": {
+          "mean": 0.002768756765759014,
+          "impressions": 4003
+        },
+        "recall@100": {
+          "mean": 0.010382094381594755,
+          "impressions": 4003
+        }
+      },
+      "without_session": {
+        "candidate_pool_recall": {
+          "mean": 0.01412338222161941,
+          "impressions": 69149
+        },
+        "categories@10": {
+          "mean": 3.6878190573977934,
+          "impressions": 69149
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4233669398076352,
+          "impressions": 69149
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.17208856358497,
+          "impressions": 69149
+        },
+        "ndcg@10": {
+          "mean": 0.002324018365902514,
+          "impressions": 69149
+        },
+        "recall@10": {
+          "mean": 0.004680248793323456,
+          "impressions": 69149
+        },
+        "recall@100": {
+          "mean": 0.012760871630486554,
+          "impressions": 69149
+        }
+      },
+      "cold_user": {
+        "candidate_pool_recall": {
+          "mean": 0.013853529799895594,
+          "impressions": 65667
+        },
+        "categories@10": {
+          "mean": 3.6873619930863297,
+          "impressions": 65667
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.42441986048894104,
+          "impressions": 65667
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.316811819060085,
+          "impressions": 65667
+        },
+        "ndcg@10": {
+          "mean": 0.0022092283406499294,
+          "impressions": 65667
+        },
+        "recall@10": {
+          "mean": 0.004444170092440912,
+          "impressions": 65667
+        },
+        "recall@100": {
+          "mean": 0.012525877987982268,
+          "impressions": 65667
+        }
+      },
+      "warm_user": {
+        "candidate_pool_recall": {
+          "mean": 0.015324988601541705,
+          "impressions": 7485
+        },
+        "categories@10": {
+          "mean": 3.6,
+          "impressions": 7485
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.41959660598031984,
+          "impressions": 7485
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 34.09790542937726,
+          "impressions": 7485
+        },
+        "ndcg@10": {
+          "mean": 0.002936642584625008,
+          "impressions": 7485
+        },
+        "recall@10": {
+          "mean": 0.0057291302181081746,
+          "impressions": 7485
+        },
+        "recall@100": {
+          "mean": 0.013550328169566646,
+          "impressions": 7485
+        }
+      },
+      "empty_long_history": {
+        "candidate_pool_recall": {
+          "mean": 0.0007339656729900631,
+          "impressions": 2214
+        },
+        "categories@10": {
+          "mean": 7.703703703703703,
+          "impressions": 2214
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.7121806609537329,
+          "impressions": 2214
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 79.38620426829269,
+          "impressions": 2214
+        },
+        "ndcg@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@10": {
+          "mean": 0.0,
+          "impressions": 2214
+        },
+        "recall@100": {
+          "mean": 7.527853056308341e-05,
+          "impressions": 2214
+        }
+      },
+      "cold_positive_article": {
+        "candidate_pool_recall": {
+          "mean": 0.011644598078000818,
+          "impressions": 71114
+        },
+        "categories@10": {
+          "mean": 3.674325730517198,
+          "impressions": 71114
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4238102429674701,
+          "impressions": 71114
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.112737542302945,
+          "impressions": 71114
+        },
+        "ndcg@10": {
+          "mean": 0.0022450714402413962,
+          "impressions": 71114
+        },
+        "recall@10": {
+          "mean": 0.004383354292303303,
+          "impressions": 71114
+        },
+        "recall@100": {
+          "mean": 0.011026347875983698,
+          "impressions": 71114
+        }
+      },
+      "unseen_content_positive": {
+        "candidate_pool_recall": {
+          "mean": 0.011606900383510007,
+          "impressions": 69148
+        },
+        "categories@10": {
+          "mean": 3.6679296581246024,
+          "impressions": 69148
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.4237078567477862,
+          "impressions": 69148
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 35.20091425436906,
+          "impressions": 69148
+        },
+        "ndcg@10": {
+          "mean": 0.002308902794026243,
+          "impressions": 69148
+        },
+        "recall@10": {
+          "mean": 0.00450798081134461,
+          "impressions": 69148
+        },
+        "recall@100": {
+          "mean": 0.010992764835609195,
+          "impressions": 69148
+        }
+      }
+    }
+  },
+  "daily": {
+    "2019-11-15": {
+      "popularity": {
+        "auc": {
+          "mean": 0.4949736816237422,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 6.061734470691164,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.2437745728853748,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.6086466747975372,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.21862541138525832,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 44.43624978695481,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.2807898952570974,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.22122104514598465,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.5061876517744256,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.3328982529694393,
+          "impressions": 73152
+        }
+      },
+      "content": {
+        "auc": {
+          "mean": 0.5956893236822256,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.285310039370079,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.3197710219384206,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.562352377046413,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27936703552828596,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 29.953862694933605,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36048674217891385,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2978280664593862,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.604980733046597,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4245949188234751,
+          "impressions": 73152
+        }
+      },
+      "long_only": {
+        "auc": {
+          "mean": 0.5949164109790305,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.439085739282589,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.31898848748704456,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5334855720470801,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.2781997830052443,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.939801964460884,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.35980428564431244,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.29703258011390987,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6053085677464827,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4244967017444683,
+          "impressions": 73152
+        }
+      },
+      "session": {
+        "auc": {
+          "mean": 0.5988707619524193,
+          "impressions": 73152
+        },
+        "categories@10": {
+          "mean": 5.4162018810148735,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.3209792158174032,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5371075494046229,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27980834208384325,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 26.512129001923185,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36225322444357205,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2991574754615441,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6089672001883321,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4274930321963025,
+          "impressions": 73152
+        }
+      },
+      "session_fresh": {
+        "categories@10": {
+          "mean": 5.408806321084865,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.31933457061107423,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5431415970939908,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27851459814887064,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 23.861342867496905,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36188255227140526,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2979426553729382,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6108807171962222,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.42721187555263074,
+          "impressions": 73152
+        }
+      },
+      "session_balanced": {
+        "categories@10": {
+          "mean": 5.535515091863517,
+          "impressions": 73152
+        },
+        "first_hit_rr": {
+          "mean": 0.318162396216172,
+          "impressions": 73152
+        },
+        "intra_list_cosine_distance@10": {
+          "mean": 0.5469985576494388,
+          "impressions": 73152
+        },
+        "mean_clicked_rr": {
+          "mean": 0.27761338895501003,
+          "impressions": 73152
+        },
+        "mean_first_seen_age_hours@10": {
+          "mean": 24.698582540445713,
+          "impressions": 73152
+        },
+        "ndcg@10": {
+          "mean": 0.36039732697756605,
+          "impressions": 73152
+        },
+        "ndcg@5": {
+          "mean": 0.2961991149162129,
+          "impressions": 73152
+        },
+        "recall@10": {
+          "mean": 0.6091719480866977,
+          "impressions": 73152
+        },
+        "recall@5": {
+          "mean": 0.4248214916011396,
+          "impressions": 73152
+        }
+      }
+    }
+  },
+  "exposure_analysis": {
+    "popularity": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 41924,
+          "events": 105824,
+          "recall": 0.3961672210462655
+        },
+        "tail_1_99": {
+          "hits": 229,
+          "events": 1482,
+          "recall": 0.1545209176788124
+        },
+        "middle_100_999": {
+          "hits": 1815,
+          "events": 2161,
+          "recall": 0.8398889403054142
+        },
+        "head_1000_plus": {
+          "hits": 1896,
+          "events": 1916,
+          "recall": 0.9895615866388309
+        }
+      },
+      "macro_clicked_article_recall@10": 0.22086226809439374,
+      "distinct_clicked_articles": 2212
+    },
+    "content": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 55406,
+          "events": 105824,
+          "recall": 0.523567432718476
+        },
+        "tail_1_99": {
+          "hits": 603,
+          "events": 1482,
+          "recall": 0.4068825910931174
+        },
+        "middle_100_999": {
+          "hits": 831,
+          "events": 2161,
+          "recall": 0.3845441925034706
+        },
+        "head_1000_plus": {
+          "hits": 805,
+          "events": 1916,
+          "recall": 0.4201461377870564
+        }
+      },
+      "macro_clicked_article_recall@10": 0.38156847110376174,
+      "distinct_clicked_articles": 2212
+    },
+    "long_only": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 55724,
+          "events": 105824,
+          "recall": 0.5265724221348654
+        },
+        "tail_1_99": {
+          "hits": 407,
+          "events": 1482,
+          "recall": 0.27462887989203777
+        },
+        "middle_100_999": {
+          "hits": 748,
+          "events": 2161,
+          "recall": 0.3461360481258677
+        },
+        "head_1000_plus": {
+          "hits": 996,
+          "events": 1916,
+          "recall": 0.5198329853862212
+        }
+      },
+      "macro_clicked_article_recall@10": 0.348954729748894,
+      "distinct_clicked_articles": 2212
+    },
+    "session": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 56216,
+          "events": 105824,
+          "recall": 0.5312216510432416
+        },
+        "tail_1_99": {
+          "hits": 412,
+          "events": 1482,
+          "recall": 0.27800269905533065
+        },
+        "middle_100_999": {
+          "hits": 701,
+          "events": 2161,
+          "recall": 0.3243868579361407
+        },
+        "head_1000_plus": {
+          "hits": 964,
+          "events": 1916,
+          "recall": 0.5031315240083507
+        }
+      },
+      "macro_clicked_article_recall@10": 0.35072032920881835,
+      "distinct_clicked_articles": 2212
+    },
+    "session_fresh": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 56994,
+          "events": 105824,
+          "recall": 0.5385734804959178
+        },
+        "tail_1_99": {
+          "hits": 338,
+          "events": 1482,
+          "recall": 0.22807017543859648
+        },
+        "middle_100_999": {
+          "hits": 545,
+          "events": 2161,
+          "recall": 0.25219805645534477
+        },
+        "head_1000_plus": {
+          "hits": 717,
+          "events": 1916,
+          "recall": 0.3742171189979123
+        }
+      },
+      "macro_clicked_article_recall@10": 0.36219531536763017,
+      "distinct_clicked_articles": 2212
+    },
+    "session_balanced": {
+      "positive_recall@10": {
+        "unseen": {
+          "hits": 56595,
+          "events": 105824,
+          "recall": 0.5348030692470517
+        },
+        "tail_1_99": {
+          "hits": 359,
+          "events": 1482,
+          "recall": 0.24224021592442646
+        },
+        "middle_100_999": {
+          "hits": 598,
+          "events": 2161,
+          "recall": 0.27672373900971775
+        },
+        "head_1000_plus": {
+          "hits": 783,
+          "events": 1916,
+          "recall": 0.40866388308977036
+        }
+      },
+      "macro_clicked_article_recall@10": 0.3588397955538083,
+      "distinct_clicked_articles": 2212
+    }
+  },
+  "catalog_coverage": {
+    "popularity": {
+      "distinct_top10_articles": 10,
+      "observed_catalog_articles": 65238,
+      "fraction": 0.0001532848953064165
+    },
+    "content": {
+      "distinct_top10_articles": 47627,
+      "observed_catalog_articles": 65238,
+      "fraction": 0.7300499708758699
+    },
+    "session": {
+      "distinct_top10_articles": 41360,
+      "observed_catalog_articles": 65238,
+      "fraction": 0.6339863269873387
+    },
+    "session_fresh": {
+      "distinct_top10_articles": 34155,
+      "observed_catalog_articles": 65238,
+      "fraction": 0.5235445599190656
+    },
+    "session_balanced": {
+      "distinct_top10_articles": 36331,
+      "observed_catalog_articles": 65238,
+      "fraction": 0.5568993531377419
+    }
+  },
+  "prediction_manifest": {
+    "status": "predictions_frozen",
+    "started_at_utc": "2026-11-19T01:32:59.303929+00:00",
+    "frozen_at_utc": "2026-11-19T01:41:57.500090+00:00",
+    "impressions": 73152,
+    "predictions_sha256": "d1ebe8511498a5655d4564600c37ecc0c569b8bc55f4df0149ddbf4b80a50344",
+    "uncompressed_sha256": "d1d3ecc732b3baf48ac081f75eb83287e3ebf9260d94c6dd539fe40862dd56fd",
+    "queries_sha256": "f55514b227536a895157d21a7f57217a049f769f7486a55e33fa3a81fc18b5c7",
+    "prepared_manifest_sha256": "dd429e7eba0e379074b9a45c4c4b100786cd7daf2c28ae2f96ea16cfb924277d",
+    "model_sha256": {
+      "content": "dd821f62657c351aee7025200add88015bcaca4379f1bcaa83fc6df39ca71a90",
+      "long_only": "7236e6b7fd41f496fbff434e5799dc734f53dfc8519994cd6a292433e91d95c4",
+      "session": "5b2ad61fe307237c7de9b6f1077cfecacff530f7d212346b91520b2b8478718d"
+    },
+    "audit": {
+      "exhaustive_float64_queries": 128,
+      "exact_order_matches": 128,
+      "maximum_score_difference": 3.0925278993176875e-07,
+      "score_tolerance": 1e-05,
+      "boundary_tie_tolerance": 1e-06,
+      "reload_impressions_per_arm": 256,
+      "reload_predictions_bitwise_equal": true,
+      "all_catalog_entries_unique_and_strictly_earlier": true
+    },
+    "runtime": {
+      "wall_seconds": 538.3830027000004,
+      "batch_size": 128,
+      "prediction_batch_p95_seconds": 1.1017383749999676,
+      "timing_scope": "Encoding, exact retrieval, scoring, policies, inline exhaustive audit and prediction serialization. Model/index loading included in wall time; metric aggregation and external audit excluded."
+    },
+    "labels": "Prediction code never accesses current labels. Prepared contexts already include only earlier eligible feedback under the frozen causal replay; this is not an entirely label-free test simulation."
+  },
+  "started_at_utc": "2026-11-19T01:42:23.532180+00:00",
+  "completed_at_utc": "2026-11-19T01:46:12.315142+00:00",
+  "metric_wall_seconds": 228.7829497999992,
+  "comparison_note": "All final impressions retained. Logged AUC/nDCG rank the observed slate; catalog recall counts only known logged positives across all earlier observed articles. Session retrieval reranks the union of content100 and popularity100; the content and popularity rows use their own100. These different candidate pools limit direct attribution. Exposure bias prevents causal engagement claims.",
+  "comparison_rows": [
+    {
+      "name": "Popularity",
+      "logged_auc": 0.4949736816237422,
+      "logged_ndcg10": 0.2807898952570974,
+      "catalog_recall100": 0.002668394407854711
+    },
+    {
+      "name": "Content retrieval",
+      "logged_auc": 0.5956893236822256,
+      "logged_ndcg10": 0.36048674217891385,
+      "catalog_recall100": 0.011982067840417603
+    },
+    {
+      "name": "Session ranking",
+      "logged_auc": 0.5988707619524193,
+      "logged_ndcg10": 0.36225322444357205,
+      "catalog_recall100": 0.012630700953986754
+    }
+  ]
+}

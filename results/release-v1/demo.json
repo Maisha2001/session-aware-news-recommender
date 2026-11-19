@@ -1,0 +1,53 @@
+{
+  "started_at_utc": "2026-11-19T01:19:23.241374+00:00",
+  "completed_at_utc": "2026-11-19T01:19:26.777735+00:00",
+  "status": "passed",
+  "checks": [
+    "Ten real service-scored training-archive stories and summaries load without errors.",
+    "Explicit positive feedback persists and enters context only after six-minute replay advance.",
+    "All three ranking preferences refresh the real recommendation feed.",
+    "Summary dialog includes score/age/content alignment and closes with Escape.",
+    "Explicit dismissal removes the served story on the next refresh.",
+    "Changing interest starts a new synthetic reader and displays the five authored starting choices.",
+    "Offline comparison view displays separate logged-ranking and catalog-retrieval metrics.",
+    "390px mobile layout has no page overflow; summaries, feedback, navigation and model results remain usable."
+  ],
+  "javascript_errors": [],
+  "screenshots": [
+    "desktop-feed.png",
+    "desktop-model-results.png",
+    "desktop-story-details.png",
+    "mobile-feed-top.png",
+    "mobile-model-results.png",
+    "mobile-stories.png",
+    "mobile-story-details.png"
+  ],
+  "data": "Training-archive content and real frozen service models; synthetic reader identities/explicit test feedback. No final holdout cases.",
+  "browser": "Isolated Playwright1.55.0 with installed Chrome in a fresh temporary browser profile; bundled Chromium cache absent. No changes to user browser profiles, prior project or course environments.",
+  "windows_ui_note": "Computer Use state capture failed twice with expired node_repl continuations; no browser input was sent through that tool. Headless browser checks provide the functional and screenshot evidence.",
+  "final_comparison_check": {
+    "status": "passed",
+    "started_at_utc": "2026-11-19T01:55:14.916908+00:00",
+    "completed_at_utc": "2026-11-19T01:55:17.766218+00:00",
+    "checks": [
+      "Final selector shows all 73,152 impressions and three exact saved metric rows.",
+      "Development view remains distinct at 61,894 impressions.",
+      "1440px desktop and 390px mobile comparison views render without overflow or JavaScript errors.",
+      "Original training-archive feed remains available; no final cases enter recommendations."
+    ],
+    "javascript_errors": [],
+    "screenshots": [
+      "desktop-final-comparison.png",
+      "mobile-final-comparison.png"
+    ],
+    "final_cases_in_demo": 0
+  },
+  "final_cases_in_demo": 0,
+  "public_images": "Two entirely authored preview screenshots; no benchmark text or model evidence.",
+  "service_cleanup": {
+    "stopped_at_utc": "2026-11-19T01:56:57.422875+00:00",
+    "owned_workers_and_news_services_stopped": true,
+    "existing_containers_unchanged": 7,
+    "volumes_preserved": true
+  }
+}

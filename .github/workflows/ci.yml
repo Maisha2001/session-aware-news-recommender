@@ -20,6 +20,7 @@ jobs:
       - run: python scripts/verify_retrieval.py
       - run: python scripts/verify_session.py
       - run: python scripts/verify_service.py
+      - run: python scripts/verify_final.py
   retrieval:
     strategy:
       matrix:
@@ -45,6 +46,7 @@ jobs:
       - run: python scripts/verify_retrieval.py
       - run: python scripts/verify_session.py
       - run: python scripts/verify_service.py
+      - run: python scripts/verify_final.py
   service:
     runs-on: ubuntu-latest
     services:
@@ -89,3 +91,39 @@ jobs:
       - run: python scripts/verify_retrieval.py
       - run: python scripts/verify_session.py
       - run: python scripts/verify_service.py
+      - run: python scripts/verify_final.py
+
+  browser:
+    runs-on: ubuntu-latest
+    env:
+      NEWS_BROWSER_TESTS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements/browser.txt
+      - run: python -m pip install -e . -r requirements/test.txt -r requirements/browser.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m pytest tests/test_browser.py tests/test_demo.py -q
+      - run: python scripts/verify_final.py
+  tracking:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      MLFLOW_DISABLE_TELEMETRY: 'true'
+      DO_NOT_TRACK: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements/tracking.txt
+      - run: python -m pip install -e . -r requirements/test.txt -r requirements/tracking.txt
+      - run: python -m pip check
+      - run: python -m pytest tests/test_tracking.py -q
+      - run: python scripts/verify_final.py

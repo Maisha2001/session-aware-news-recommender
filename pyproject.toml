@@ -4,8 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "session-aware-news-recommender"
-version = "0.1.0"
+version = "1.0.0"
 description = "Chronological news recommendation with reproducible offline evaluation"
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
 
@@ -18,3 +19,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.setuptools.package-data]
+newsrec = ["web/*"]

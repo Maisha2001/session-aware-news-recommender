@@ -1,0 +1,41 @@
+{
+  "fixtures": "Authored; no repeated benchmark training or evaluation. Full includes real dedicated PostgreSQL/Redis integration. Browser and tracking use isolated optional environments. Counts overlap across suites.",
+  "local": {
+    "full": {
+      "started_at_utc": "2026-11-19T01:55:56.693033+00:00",
+      "completed_at_utc": "2026-11-19T01:56:11.935256+00:00",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "2",
+      "tests": "85",
+      "time": "14.078"
+    },
+    "baseline": {
+      "started_at_utc": "2026-11-19T01:56:10.348491+00:00",
+      "completed_at_utc": "2026-11-19T01:56:11.959953+00:00",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "7",
+      "tests": "47",
+      "time": "1.301"
+    },
+    "browser": {
+      "started_at_utc": "2026-11-19T01:56:12.436904+00:00",
+      "completed_at_utc": "2026-11-19T01:56:16.316516+00:00",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "9",
+      "time": "3.412"
+    },
+    "tracking": {
+      "started_at_utc": "2026-11-19T01:56:16.766497+00:00",
+      "completed_at_utc": "2026-11-19T01:56:20.141409+00:00",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "2",
+      "time": "2.681"
+    }
+  }
+}

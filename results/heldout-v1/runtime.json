@@ -1,0 +1,187 @@
+{
+  "prepare": {
+    "stage": "prepare",
+    "started_at_utc": "2026-11-19T01:30:10.243493+00:00",
+    "completed_at_utc": "2026-11-19T01:30:14.154516+00:00",
+    "wall_seconds": 3.911030600000231,
+    "returncode": 1,
+    "sampled_combined_peak_rss_bytes": 261066752,
+    "samples": 36,
+    "sampling_seconds": 0.1,
+    "scope": "Owned process RSS sampled every 100 ms; actual Python worker, launcher and console host are identified separately. Excludes other stages, Docker, OS file cache, drivers and other applications.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+    "process_memory_samples": [
+      {
+        "executable": "python.exe",
+        "launcher": true,
+        "peak_rss_bytes": 4222976
+      },
+      {
+        "executable": "conhost.exe",
+        "launcher": false,
+        "peak_rss_bytes": 7467008
+      },
+      {
+        "executable": "python.exe",
+        "launcher": false,
+        "peak_rss_bytes": 249376768
+      }
+    ]
+  },
+  "prepare-v2": {
+    "stage": "prepare-v2",
+    "started_at_utc": "2026-11-19T01:31:44.479114+00:00",
+    "completed_at_utc": "2026-11-19T01:32:28.975664+00:00",
+    "wall_seconds": 44.49655570000141,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 1044742144,
+    "samples": 406,
+    "sampling_seconds": 0.1,
+    "scope": "Owned process RSS sampled every 100 ms; actual Python worker, launcher and console host are identified separately. Excludes other stages, Docker, OS file cache, drivers and other applications.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+    "process_memory_samples": [
+      {
+        "executable": "python.exe",
+        "launcher": true,
+        "peak_rss_bytes": 4222976
+      },
+      {
+        "executable": "conhost.exe",
+        "launcher": false,
+        "peak_rss_bytes": 7462912
+      },
+      {
+        "executable": "python.exe",
+        "launcher": false,
+        "peak_rss_bytes": 1033089024
+      }
+    ]
+  },
+  "predict": {
+    "stage": "predict",
+    "started_at_utc": "2026-11-19T01:32:55.868203+00:00",
+    "completed_at_utc": "2026-11-19T01:41:57.912035+00:00",
+    "wall_seconds": 542.0438403999997,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 762658816,
+    "samples": 4958,
+    "sampling_seconds": 0.1,
+    "scope": "Owned process RSS sampled every 100 ms; actual Python worker, launcher and console host are identified separately. Excludes other stages, Docker, OS file cache, drivers and other applications.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+    "process_memory_samples": [
+      {
+        "executable": "python.exe",
+        "launcher": true,
+        "peak_rss_bytes": 4317184
+      },
+      {
+        "executable": "conhost.exe",
+        "launcher": false,
+        "peak_rss_bytes": 7585792
+      },
+      {
+        "executable": "python.exe",
+        "launcher": false,
+        "peak_rss_bytes": 750829568
+      }
+    ]
+  },
+  "metrics": {
+    "stage": "metrics",
+    "started_at_utc": "2026-11-19T01:42:19.769243+00:00",
+    "completed_at_utc": "2026-11-19T01:46:12.576887+00:00",
+    "wall_seconds": 232.80765150000116,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 332955648,
+    "samples": 2141,
+    "sampling_seconds": 0.1,
+    "scope": "Owned process RSS sampled every 100 ms; actual Python worker, launcher and console host are identified separately. Excludes other stages, Docker, OS file cache, drivers and other applications.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+    "process_memory_samples": [
+      {
+        "executable": "python.exe",
+        "launcher": true,
+        "peak_rss_bytes": 4222976
+      },
+      {
+        "executable": "conhost.exe",
+        "launcher": false,
+        "peak_rss_bytes": 7458816
+      },
+      {
+        "executable": "python.exe",
+        "launcher": false,
+        "peak_rss_bytes": 321306624
+      }
+    ]
+  },
+  "audit": {
+    "stage": "audit",
+    "started_at_utc": "2026-11-19T01:48:09.263481+00:00",
+    "completed_at_utc": "2026-11-19T01:52:34.990519+00:00",
+    "wall_seconds": 265.72704499999963,
+    "returncode": 0,
+    "sampled_combined_peak_rss_bytes": 2496552960,
+    "samples": 2443,
+    "sampling_seconds": 0.1,
+    "scope": "Owned process RSS sampled every 100 ms; actual Python worker, launcher and console host are identified separately. Excludes other stages, Docker, OS file cache, drivers and other applications.",
+    "environment": {
+      "TF_USE_LEGACY_KERAS": "1",
+      "TF_NUM_INTRAOP_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "TF_CPP_MIN_LOG_LEVEL": "2",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "protocol_sha256": "039b15baf2a33610d0fa7064136b0452dcc0a7df09ff33b6f528278c5e539bc7",
+    "process_memory_samples": [
+      {
+        "executable": "python.exe",
+        "launcher": true,
+        "peak_rss_bytes": 4222976
+      },
+      {
+        "executable": "conhost.exe",
+        "launcher": false,
+        "peak_rss_bytes": 7467008
+      },
+      {
+        "executable": "python.exe",
+        "launcher": false,
+        "peak_rss_bytes": 2484895744
+      }
+    ]
+  }
+}

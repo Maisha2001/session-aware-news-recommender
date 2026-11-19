@@ -1,0 +1,30 @@
+{
+  "run_id": "01f40882b0be4f44a2f0c5aff3150b0b",
+  "status": "FINISHED",
+  "created_at_utc": "2026-11-19T01:57:04.508000+00:00",
+  "tracking_mode": "local SQLite and filesystem artifacts; no cloud API",
+  "training_performed": false,
+  "metrics_verified": 758,
+  "parameters_verified": 10,
+  "artifact_sha256": {
+    "models/content.weights.h5": "dd821f62657c351aee7025200add88015bcaca4379f1bcaa83fc6df39ca71a90",
+    "models/long_only.weights.h5": "7236e6b7fd41f496fbff434e5799dc734f53dfc8519994cd6a292433e91d95c4",
+    "models/session.weights.h5": "5b2ad61fe307237c7de9b6f1077cfecacff530f7d212346b91520b2b8478718d",
+    "evidence/report.json": "df03daf065a18c76e30953c9ce08469ebb6c82ee3614c56f7976425ac38fd252",
+    "evidence/audit.json": "95197f1631dd59b46a9afe832e3c61deae0cc7a197a105198cbb8e51d75c0d8f",
+    "evidence/protocol.json": "21d204218c9891274d5e24fdd18be0c7d14455aace36b6786ec09185ed589ba4",
+    "package/session_aware_news_recommender-1.0.0-py3-none-any.whl": "2bc1adf44110b65f2cd080268b9daa7391fedd57ff09ee4f294124e939c129a0",
+    "package/verification.json": "43e13702bcf30ca59f7a761d5cf3dc2c4772b4533789cc108ed042d4b5f6fe28",
+    "environment/service-recorded.txt": "b89cc9b20dc0434cd789fc9fc5d593b6c8c855c693053a3161aea834f18807e3",
+    "environment/tracking-recorded.txt": "2f25d69c26e37d6f08ed04a4c16682ab501cccbc3837b10887b7cae8683dd8c8",
+    "environment/browser-recorded.txt": "9d6c98fd3b8e0308c029b4db44f79025c9efb800cfca42fdbaf1d7a71fa2eec9",
+    "earlier/baseline-v1.json": "638f1b608de006ce066703fe551a642eb04a9af76bbcbd8c0eaca0a036331ae4",
+    "earlier/retrieval-v1.json": "7845b33ba7202345bd3e85d909f6dce218437079d27939f314255e8452d5f949",
+    "earlier/session-v1.json": "a1de374eaf07a02bc5d55dc1a83080a0f208fc36a34a27fd76833cad3b6d3eeb",
+    "earlier/service-v1.json": "39bf9c142ecd23052790e2cc978c1a4806c38adf23fbd3f7d10c07995649141c",
+    "verification/demo-browser.json": "88654fe677e40339d5786b84b5f4729255728158e9e982943b8d86e5e2db1627",
+    "verification/final-comparison-browser.json": "8b65413ad7e08ab82d47864ed0acd4f4ba5525f6b65a49f476c0258965b49107"
+  },
+  "report_sha256": "df03daf065a18c76e30953c9ce08469ebb6c82ee3614c56f7976425ac38fd252",
+  "completed_at_utc": "2026-11-19T01:57:05.175138+00:00"
+}

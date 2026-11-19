@@ -1,0 +1,14 @@
+{
+  "verified_at_utc": "2026-11-19T01:54:35.337167+00:00",
+  "wheel_name": "session_aware_news_recommender-1.0.0-py3-none-any.whl",
+  "wheel_sha256": "2bc1adf44110b65f2cd080268b9daa7391fedd57ff09ee4f294124e939c129a0",
+  "wheel_bytes": 70946,
+  "source_assets_match": true,
+  "fresh_target_import": true,
+  "trained_weights_reloaded": true,
+  "authored_input_reload_equal": true,
+  "demo_assets_and_factory": true,
+  "cli_help": true,
+  "training_or_benchmark_evaluation_rerun": false,
+  "scope": "Fresh isolated target installation using existing pinned service dependencies. Actual package path, all source/web bytes, CLI, demo fixture and frozen model reload predictions verified. Licensed data/model files are not included."
+}

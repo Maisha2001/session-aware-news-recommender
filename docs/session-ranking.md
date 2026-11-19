@@ -4,7 +4,7 @@ The ranker combines the frozen content vectors, a reader's supplied longer-term
 history, earlier same-session feedback and an article-age proxy. It includes a
 separately trained long-term-only comparison and fixed freshness/diversity
 controls. This is an offline research workflow. The [local service](service.md) reuses
-these frozen models; the browsing demo remains unfinished.
+these frozen models in the [browsing demo](demo.md).
 
 ## Run
 
@@ -118,7 +118,7 @@ use only known logged clicks; full-catalog AUC is not reported. Without logging
 propensities or randomized data, these results cannot support unbiased inverse-
 propensity estimates, causal claims or live engagement lift.
 
-Exposure-frequency bins use fitting exposures only: unseen, 1â€“99, 100â€“999 and
+Exposure-frequency bins use fitting exposures only: unseen, 1-99, 100-999 and
 1,000 or more. Event recall within each bin and macro recall across distinct
 clicked articles show sensitivity to frequently exposed items. These descriptive
 comparisons do not remove selection bias. Cold-user, cold-positive-article,
@@ -141,4 +141,5 @@ See [results](../results/session-v1/report.json),
 [runtime](../results/session-v1/runtime.json). Runtime measurements are local
 offline stages and batches, not API latency. One seed and one configuration do
 not establish significance or cross-platform bitwise retraining. The official
-validation archive remains sealed for the final project evaluation.
+validation archive was sealed at this stage; the subsequent
+[final evaluation](final-evaluation.md) preserves these models and results.
