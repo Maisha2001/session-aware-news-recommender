@@ -94,7 +94,7 @@ jobs:
       - run: python scripts/verify_final.py
 
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       NEWS_BROWSER_TESTS: '1'
     steps:
